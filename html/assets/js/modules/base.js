@@ -21,7 +21,7 @@ define([], function(){
 
 
         // date picker
-        $('input.js-datepicker--single').daterangepicker();
+        $('input.js-datepicker').daterangepicker();
 
         $('.js-datepicker-report-courses').daterangepicker({
           autoUpdateInput: false,

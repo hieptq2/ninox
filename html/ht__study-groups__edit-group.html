@@ -88,7 +88,7 @@
 					  			<div class="group-header">
 					  				<h3 class="group-header__title">Total course sessions: <b>01</b></h3>
 					  				<div class="group-header__actions">
-					  					<a href="#" class="btn btn-xs btn--default"><i class="fas fa-plus h-mr-8"></i>Add Course Session</a>
+					  					<a href="#Modal__AddSession" class="btn btn-xs btn--default" data-toggle="modal"><i class="fas fa-plus h-mr-8"></i>Add Course Session</a>
 					  				</div>
 					  			</div>
 					  			<div class="group-body">
@@ -194,13 +194,228 @@
 		</footer>
 	</div>
 
-	<div class="modal modal--expel fade" id="Modal__Expel" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal modal--session fade" id="Modal__AddSession" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	    	<div class="modal-header">
+	        <h5 class="modal-title">Add Course Session</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <div class="study-group-input-section">
+		  			<div class="form-group">
+		  				<div class="row align-items-center">
+			  				<div class="col-md-4 col-lg-3">
+			  					<label class="mb-lg-0">Choose Course</label>
+			  				</div>
+			  				<div class="col-md col-lg">
+			  					<select name="" id="" class="c-form__control form-control form-control--select2">
+			  						<option value="">Mathematic 2</option>
+			  						<option value="">2</option>
+			  						<option value="">3</option>
+			  						<option value="">4</option>
+			  						<option value="">5</option>
+			  						<option value="">6</option>
+			  						<option value="">7</option>
+			  						<option value="">8</option>
+			  					</select>
+			  				</div>
+			  			</div>
+		  			</div>
+		  			<div class="form-group">
+		  				<div class="row align-items-center">
+			  				<div class="col-md-4 col-lg-3">
+			  					<label class="mb-lg-0">Start - End Date</label>
+			  				</div>
+			  				<div class="col-md col-lg">
+			  					<div class="position-relative">
+										<i class="c-form__icon fas fa-calendar-alt"></i>
+										<input type="text" class="c-form__control form-control js-datepicker">
+									</div>
+			  				</div>
+			  			</div>
+		  			</div>
+		  		</div>
+	  			<div class="c-lesson">
+	  				<div class="lesson-crcl">
+							<div class="row h-mt-24">
+								<div class="col-12 col-xl-4 mb-3 mb-xl-0">
+									<div class="c-filter-toggler collapsed d-flex d-xl-none" data-toggle="collapse" data-target="#Collapse__MenuLesson">
+										<span class="c-filter-toggler__label">Mục lục</span>
+										<i class="c-filter-toggler__icon fas"></i>
+									</div>
+									<div id="Collapse__MenuLesson" class="collapse d-xl-block">
+										<div class="lesson-crcl__menu">
+											<ul class="list-crcl-menu">
+												<li>
+													<a href="#menuCollapse01" class="main-item" data-toggle="collapse">
+														<div class="item__toggle-icon"><i class="fas fa-angle-down"></i></div>
+														<div class="item__label">Module 1</div>
+														<div class="item__status"><div class="milestone-icon milestone-icon--not-required"></div></div>
+													</a>
+													<ul id="menuCollapse01" class="collapse show">
+														<li>
+															<a href="#" class="sub-item">
+																<div class="item__label">Lesson 1</div>
+																<div class="item__status"><div class="milestone-icon milestone-icon--required milestone-icon--completed"></div></div>
+															</a>
+														</li>
+														<li class="active">
+															<a href="#" class="sub-item">
+																<div class="item__label">Lesson 2</div>
+																<div class="item__status"><div class="milestone-icon milestone-icon--required milestone-icon--completed"></div></div>
+															</a>
+														</li>
+														<li>
+															<a href="#" class="sub-item">
+																<div class="item__label">Lesson 3</div>
+																<div class="item__status"><div class="milestone-icon milestone-icon--required milestone-icon--completed"></div></div>
+															</a>
+														</li>
+													</ul>
+												</li>
+												<li class="active">
+													<a href="#menuCollapse02" class="main-item collapsed" data-toggle="collapse">
+														<div class="item__toggle-icon"><i class="fas fa-angle-down"></i></div>
+														<div class="item__label">Lorem ipsum dolor sit amet</div>
+														<div class="item__status"><div class="milestone-icon milestone-icon--not-required"></div></div>
+													</a>
+													<ul id="menuCollapse02" class="collapse">
+														<li>
+															<a href="#" class="sub-item">
+																<div class="item__label">Lesson 1</div>
+																<div class="item__status"><div class="milestone-icon milestone-icon--required milestone-icon--completed"></div></div>
+															</a>
+														</li>
+														<li>
+															<a href="#" class="sub-item">
+																<div class="item__label">Lesson 1</div>
+																<div class="item__status"><div class="milestone-icon milestone-icon--required milestone-icon--completed"></div></div>
+															</a>
+														</li>
+														<li>
+															<a href="#" class="sub-item">
+																<div class="item__label">Lesson 1</div>
+																<div class="item__status"><div class="milestone-icon milestone-icon--required milestone-icon--completed"></div></div>
+															</a>
+														</li>
+														<li>
+															<a href="#" class="sub-item">
+																<div class="item__label">Lesson 1</div>
+																<div class="item__status"><div class="milestone-icon milestone-icon--required milestone-icon--completed"></div></div>
+															</a>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<a href="#menuCollapse03" class="main-item collapsed" data-toggle="collapse">
+														<div class="item__toggle-icon"><i class="fas fa-angle-down"></i></div>
+														<div class="item__label">Module 1</div>
+														<div class="item__status"><div class="milestone-icon milestone-icon--not-required"></div></div>
+													</a>
+													<ul  id="menuCollapse03" class="collapse">
+														<li>
+															<a href="#" class="sub-item">
+																<div class="item__label">Lesson 1</div>
+																<div class="item__status"><div class="milestone-icon milestone-icon--required milestone-icon--completed"></div></div>
+															</a>
+														</li>
+														<li>
+															<a href="#" class="sub-item">
+																<div class="item__label">Lesson 1</div>
+																<div class="item__status"><div class="milestone-icon milestone-icon--required milestone-icon--completed"></div></div>
+															</a>
+														</li>
+														<li>
+															<a href="#" class="sub-item">
+																<div class="item__label">Lesson 1</div>
+																<div class="item__status"><div class="milestone-icon milestone-icon--required milestone-icon--completed"></div></div>
+															</a>
+														</li>
+														<li>
+															<a href="#" class="sub-item">
+																<div class="item__label">Lesson 1</div>
+																<div class="item__status"><div class="milestone-icon milestone-icon--required milestone-icon--completed"></div></div>
+															</a>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-xl-8">
+									<div class="lesson-crcl__content">
+										<div class="row align-items-center">
+											<div class="col-md">
+												<h2 class="content-title h-mb-0">Lesson 4</h2>
+											</div>
+										</div>
+										<hr>
+										<div class="lesson-crcl__included">
+											<div class="row align-items-center">
+												<div class="col-sm">
+													<div class="single-included-item">
+														<div class="item-icon"><img src="assets/samples/controller.png" alt=""></div>
+														<div class="item-data">2</div>
+													</div>
+												</div>
+												<div class="col-sm">
+													<div class="single-included-item">
+														<div class="item-icon"><img src="assets/samples/video.png" alt=""></div>
+														<div class="item-data">2</div>
+													</div>
+												</div>
+												<div class="col-sm">
+													<div class="single-included-item">
+														<div class="item-icon"><div class="milestone-icon milestone-icon--required"></div></div>
+														<div class="item-data">2</div>
+													</div>
+												</div>
+												<div class="col-sm">
+													<div class="single-included-item">
+														<div class="item-icon"><div class="milestone-icon milestone-icon--not-required"></div></div>
+														<div class="item-data">2</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="h-mt-24">
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
+											<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+											<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+											<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+											<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+											<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+											<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+											<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+	      </div>
+	      <div class="modal-footer row justify-content-between">
+      		<div class="col"></div>
+      		<div class="col-auto">
+      			<button type="button" class="btn c-button c-button--default mr-2">Cancel</button>
+      			<button type="button" class="btn c-button c-button--secondary">Yes</button>
+      		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal modal--enroll fade" id="Modal__Enroll" tabindex="-1" role="dialog" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-body">
-	        <div class="study-group-input-section">
+	        <div class="study-group-search-section">
 	        	<div class="form-row">
-	        		<div class="col-auto">
+	        		<div class="col-12 col-md-auto">
 	        			<div class="group-type">
 		        			<select name="" id="" class="c-form__control form-control">
 			  						<option value="" selected="">Class</option>
@@ -208,27 +423,73 @@
 			  					</select>
 		        		</div>
 	        		</div>
-	        		<div class="col">
+	        		<div class="col-12 col-md">
 		        		<div class="group-data">
-		        			<input type="text" class="c-form__control form-control" placeholder="Type to search">
+		        			<input type="text" class="group-data__input c-form__control form-control" placeholder="Type to search">
 		        			<div class="group-data__icon"><i class="fas fa-search"></i></div>
-		        			<ul class="group-data__suggested-list">
-		        				<li class="suggested-item">
-		        					<a href="#" class="suggested-item__wrap">
-		        						<div class="sugessted-item__row">
-			        						<div class="sugessted-item__title">Trần Hoàng Đức</div>
-			        						<div class="sugessted-item__id">ID: 2304923</div>
-			        					</div>
-			        					<div class="sugessted-item__row">
-			        						<div class="sugessted-item__class">1A2, Tieu hoc Nguyen Trai</div>
-			        						<div class="sugessted-item__addr">Hanoi</div>
-			        					</div>
-		        					</a>
-		        				</li>
-		        			</ul>
+		        			<div class="group-data__suggested-list h-shadow-1d d-none">
+		        				<ul class="list-suggested-items">
+			        				<li class="suggested-item">
+			        					<a href="#" class="suggested-item__wrap">
+			        						<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title"><b>Trần Anh Thư</b></div>
+	        										<div class="content-data content-data--school">Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto text-right">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+			        					</a>
+			        				</li>
+			        				<li class="suggested-item">
+			        					<a href="#" class="suggested-item__wrap">
+			        						<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title"><b>Trần Anh Thư</b></div>
+	        										<div class="content-data content-data--school">Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto text-right">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+			        					</a>
+			        				</li>
+			        				<li class="suggested-item">
+			        					<a href="#" class="suggested-item__wrap">
+			        						<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title"><b>Trần Anh Thư</b></div>
+	        										<div class="content-data content-data--school">Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto text-right">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+			        					</a>
+			        				</li>
+			        				<li class="suggested-item">
+			        					<a href="#" class="suggested-item__wrap">
+			        						<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title"><b>Trần Anh Thư</b></div>
+	        										<div class="content-data content-data--school">Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto text-right">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+			        					</a>
+			        				</li>
+		        				</ul>
+		        			</div>
 		        		</div>
 	        		</div>
-	        		<div class="col-auto">
+	        		<div class="col-12 col-md-auto">
 		        		<div class="group-submit">
 		        			<button class="btn btn--primary">Add</button>
 		        		</div>
@@ -252,20 +513,32 @@
 	        							<input type="checkbox" class="single-option__input">
 	        							<div class="single-option__icon"></div>
 	        							<div class="single-option__content">
-	        								<div class="form-row">
+	        								<div class="form-row align-items-center">
 	        									<div class="col">
 	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
-	        									</div>
-	        									<div class="col-auto">
-	        										<div class="content-data content-data--id">12312312</div>
-	        									</div>
-	        								</div>
-	        								<div class="form-row">
-	        									<div class="col">
 	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
 	        									</div>
 	        									<div class="col-auto">
-	        										<div class="content-data content-data--id">Hanoi</div>
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input" checked>
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
+	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
 	        									</div>
 	        								</div>
 	        							</div>
@@ -276,14 +549,423 @@
 	        							<input type="checkbox" class="single-option__input">
 	        							<div class="single-option__icon"></div>
 	        							<div class="single-option__content">
-	        								<div class="form-row">
+	        								<div class="form-row align-items-center">
 	        									<div class="col">
 	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
 	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
 	        									</div>
 	        									<div class="col-auto">
 	        										<div class="content-data content-data--id">12312312</div>
-	        										<div class="content-data content-data--id">Hanoi</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
+	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
+	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
+	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        				</div>
+	        			</div>
+	        		</div>
+	        	</div>
+	        	<div class="col-md-4">
+	        		<div class="study-group-select-section">
+	        			<div class="section-header">
+	        				<h4 class="section-header__title">Class</h4>
+	        				<div class="section-header__actions">
+	        					<a href="#" class="single-action single-action--btn">Select All</a>
+	        					<a href="#" class="single-action single-action--icon"><i class="fas fa-trash"></i></a>
+	        				</div>
+	        			</div>
+	        			<div class="section-body">
+	        				<div class="select-options-wrap">
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">1A2</div>
+	        										<div class="content-data content-data--school">Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        				</div>
+	        			</div>
+	        		</div>
+	        	</div>
+	        	<div class="col-md-4">
+	        		<div class="study-group-select-section">
+	        			<div class="section-header">
+	        				<h4 class="section-header__title">School</h4>
+	        				<div class="section-header__actions">
+	        					<a href="#" class="single-action single-action--btn">Select All</a>
+	        					<a href="#" class="single-action single-action--icon"><i class="fas fa-trash"></i></a>
+	        				</div>
+	        			</div>
+	        			<div class="section-body">
+	        				<div class="select-options-wrap">
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tieu hoc Khuong Thuong</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--count">223</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        				</div>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+	      </div>
+	      <div class="modal-footer row justify-content-between">
+      		<div class="col">
+      			Total members: <b>24</b>
+      		</div>
+      		<div class="col-auto">
+      			<button type="button" class="btn c-button c-button--default mr-2">Cancel</button>
+      			<button type="button" class="btn c-button c-button--secondary">Yes</button>
+      		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal modal--expel fade" id="Modal__Expel" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        <div class="study-group-search-section">
+	        	<div class="form-row">
+	        		<div class="col-12 col-md-auto">
+	        			<div class="group-type">
+		        			<select name="" id="" class="c-form__control form-control">
+			  						<option value="" selected="">Class</option>
+			  						<option value="">School</option>
+			  					</select>
+		        		</div>
+	        		</div>
+	        		<div class="col-12 col-md">
+		        		<div class="group-data">
+		        			<input type="text" class="group-data__input c-form__control form-control" placeholder="Type to search">
+		        			<div class="group-data__icon"><i class="fas fa-search"></i></div>
+		        			<div class="group-data__suggested-list h-shadow-1d">
+		        				<ul class="list-suggested-items">
+			        				<li class="suggested-item">
+			        					<a href="#" class="suggested-item__wrap">
+			        						<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title"><b>Trần Anh Thư</b></div>
+	        										<div class="content-data content-data--school">Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto text-right">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+			        					</a>
+			        				</li>
+			        				<li class="suggested-item">
+			        					<a href="#" class="suggested-item__wrap">
+			        						<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title"><b>Trần Anh Thư</b></div>
+	        										<div class="content-data content-data--school">Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto text-right">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+			        					</a>
+			        				</li>
+			        				<li class="suggested-item">
+			        					<a href="#" class="suggested-item__wrap">
+			        						<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title"><b>Trần Anh Thư</b></div>
+	        										<div class="content-data content-data--school">Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto text-right">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+			        					</a>
+			        				</li>
+			        				<li class="suggested-item">
+			        					<a href="#" class="suggested-item__wrap">
+			        						<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title"><b>Trần Anh Thư</b></div>
+	        										<div class="content-data content-data--school">Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto text-right">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+			        					</a>
+			        				</li>
+		        				</ul>
+		        			</div>
+		        		</div>
+	        		</div>
+	        		<div class="col-12 col-md-auto">
+		        		<div class="group-submit">
+		        			<button class="btn btn--primary">Add</button>
+		        		</div>
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="row pt-4">
+	        	<div class="col-md-4">
+	        		<div class="study-group-select-section">
+	        			<div class="section-header">
+	        				<h4 class="section-header__title">Student</h4>
+	        				<div class="section-header__actions">
+	        					<a href="#" class="single-action single-action--btn">Select All</a>
+	        					<a href="#" class="single-action single-action--icon"><i class="fas fa-trash"></i></a>
+	        				</div>
+	        			</div>
+	        			<div class="section-body">
+	        				<div class="select-options-wrap">
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
+	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input" checked>
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
+	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
+	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
+	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
+	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tran Hoang Duc</div>
+	        										<div class="content-data content-data--class">1A3, Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        				</div>
+	        			</div>
+	        		</div>
+	        	</div>
+	        	<div class="col-md-4">
+	        		<div class="study-group-select-section">
+	        			<div class="section-header">
+	        				<h4 class="section-header__title">Class</h4>
+	        				<div class="section-header__actions">
+	        					<a href="#" class="single-action single-action--btn">Select All</a>
+	        					<a href="#" class="single-action single-action--icon"><i class="fas fa-trash"></i></a>
+	        				</div>
+	        			</div>
+	        			<div class="section-body">
+	        				<div class="select-options-wrap">
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">1A2</div>
+	        										<div class="content-data content-data--school">Tieu hoc Khuong Thuong</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--id">12312312</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        								</div>
+	        							</div>
+	        						</label>
+	        					</div>
+	        				</div>
+	        			</div>
+	        		</div>
+	        	</div>
+	        	<div class="col-md-4">
+	        		<div class="study-group-select-section">
+	        			<div class="section-header">
+	        				<h4 class="section-header__title">School</h4>
+	        				<div class="section-header__actions">
+	        					<a href="#" class="single-action single-action--btn">Select All</a>
+	        					<a href="#" class="single-action single-action--icon"><i class="fas fa-trash"></i></a>
+	        				</div>
+	        			</div>
+	        			<div class="section-body">
+	        				<div class="select-options-wrap">
+	        					<div class="single-option">
+	        						<label class="single-option__label">
+	        							<input type="checkbox" class="single-option__input">
+	        							<div class="single-option__icon"></div>
+	        							<div class="single-option__content">
+	        								<div class="form-row align-items-center">
+	        									<div class="col">
+	        										<div class="content-data content-data--title">Tieu hoc Khuong Thuong</div>
+	        										<div class="content-data content-data--addr">Hanoi</div>
+	        									</div>
+	        									<div class="col-auto">
+	        										<div class="content-data content-data--count">223</div>
 	        									</div>
 	        								</div>
 	        							</div>

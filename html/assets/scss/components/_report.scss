@@ -495,7 +495,8 @@
 
 .modal{
 	&--expel,
-	&--enroll{
+	&--enroll,
+	&--session{
 		.modal-dialog{
 			@include viewport-min(md){
 				width: 640px;
@@ -509,19 +510,76 @@
 			}
 		}
 		.modal-content{
-			padding: 24px;
+			padding: 16px;
 		}
 	}
 	.study-group-input-section{
-		margin: 0 0 24px;
+		margin: 0 0 32px;
 		padding: 0 0 24px;
 		border-bottom: 2px solid set-color('divider');
 	}
 }
+.study-group-search-section{
+	.group-data{
+		position: relative;
+		&__input{
+			padding-left: 48px;
+		}
+		&__icon{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 48px;
+			line-height: 48px;
+			text-align: center;
+		}
+		&__suggested-list{
+			display: block;
+			position: absolute;
+			top: 100%;
+			left: 0; right: 0;
+			margin: 2px 0 0;
+			padding: 4px;
+			list-style: none;
+			background-color: #fff;
+			border-radius: 8px;
+			z-index: 100;
+			ul.list-suggested-items{
+				padding: 2px;
+				margin: 0;
+				max-height: 156px;
+				overflow: auto;
+				@include scrollbar(4px, rgba(#000,.2), $grey100);
+				li{
+					border-bottom: 1px solid $grey200;
+					&:last-child{
+						border-bottom: 0;
+					}
+				}
+			}
+				
+			.suggested-item{
+				
+				&__wrap{
+					display: block;
+					padding: 6px 12px;
+					font-size: 12px;
+					color: $grey800;
+					&:hover{
+						background-color: $grey100;
+					}
+
+				}
+			}
+		}
+	}
+}
 .study-group-select-section{
+	padding: 16px 0;
 	.section-header{
 		display: flex;
 		align-items: center;
+		padding: 0 4px;
 		&__title{
 			flex: 1 1 auto;
 			min-width: 0;
@@ -562,22 +620,35 @@
 		}
 	}
 	.section-body{
-		margin: 12px 0 0;
+		margin: 8px 0 0;
 		padding: 4px;
 		border: 2px solid $grey200;
 		border-radius: 8px;
 	}
 	.select-options-wrap{
-		height: 320px;
+		height: 280px;
 		overflow-y: auto;
+		@include scrollbar(6px, rgba(#000,.2), $grey100);
 		.single-option{
 			padding: 12px 8px;
-			line-height: 18px;
-			font-size: 14px;
+			line-height: 14px;
+			font-size: 11px;
+			border-bottom: 1px solid $grey200;
+			&:last-child{
+				border-bottom: 0;
+			}
 			.form-row{
 				margin: 0 0 4px;
 				&:last-child{
 					margin: 0;
+				}
+				.col{
+					min-width: 0;
+				}
+				[class^="col"]{
+					&:last-child{
+						text-align: right;
+					}
 				}
 			}
 			&__label{
@@ -585,21 +656,63 @@
 				display: flex;
 				padding: 0;
 				margin: 0;
+				cursor: pointer;
+				&:hover{
+					.single-option__icon{
+						background-color: $grey50;
+					}
+				}
 			}
 			&__input{
 				display: none;
+				&:checked{
+					& + .single-option__icon{
+						&:after{
+							opacity: 1;
+  						@include rotate(0);
+						}
+					}
+				}
 			}
 			&__icon{
+				display: block;
+				position: relative;
 				flex: 0 0 20px;
 				display: block;
 				width: 20px;
 				height: 20px;
-				border: 1px solid $grey300;
+				border: 1px solid $grey400;
+				@include transition(background-color .1s ease-in-out);
+				&:after{
+					display: block;
+					content: "\f00c";
+					position: absolute;
+					top: -1px; left: -1px;
+					width: 20px;
+					line-height: 20px;
+					text-align: center;
+					color: $grey800;
+					font-family: "Font Awesome 5 Free";
+					font-size: 12px;
+  				font-weight: 900;
+  				opacity: 0;
+  				@include rotate(-45deg);
+  				@include transition(opacity .1s ease-in-out, transform .1s ease-in-out);
+				}
 			}
 			&__content{
 				padding: 0 5px;
 				.content-data{
+					margin: 0 0 4px;
 					@include one-line-ellipsis();
+					&:last-child{
+						margin-bottom: 0;
+					}
+					&--title{
+						line-height: 16px;
+						font-size: 13px;
+						font-weight: 600;
+					}
 				}
 			}
 		}
