@@ -634,6 +634,102 @@
       }
     }
   }
+
+
+  /**
+   * Study group
+   */
+  
+  &--study-groups{
+    border: 0;
+    thead{
+      tr{
+        th{
+          border: 0;
+          border-right: 0;
+          font-size: 14px;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          vertical-align: middle;
+          font-size: 16px;
+          border: 0;
+          border-bottom: 1px solid set-color('divider');
+        }
+      }
+    }
+    .data-group{
+      &-color{
+        width: 1%;
+      }
+      &-title{
+        width: 35%;
+      }
+      &-grade{
+        text-align: center;
+      }
+      &-members{
+        text-align: center;
+      }
+      &-school{
+        width: 30%;
+      }
+      &-action{
+        width: 1%;
+        white-space: nowrap;
+        &__single-action{
+          padding: 4px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &--study-group-form{
+    border: 0;
+    thead{
+      tr{
+        th{
+          border: 0;
+          border-right: 0;
+          font-size: 14px;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          font-size: 16px;
+          border: 0;
+          border-bottom: 1px solid set-color('divider');
+        }
+        &:last-child{
+          td{
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+    .data{
+      &-course-name{
+        width: 50%;
+      }
+      &-action{
+        width: 1%;
+        white-space: nowrap;
+      }
+      &-member-name,
+      &-member-id,
+      &-member-class,
+      &-member-school{
+        width: 25%;
+      }
+
+    }
+  }
 }
 
 .table{
@@ -685,6 +781,36 @@
         }
       }
     }
+  }
+}
+
+.c-table-notes{
+  margin: 32px 0 0;
+  padding: 16px 0 0;
+  border-top: 2px dashed $grey200;
+}
+.study-group-color{
+  padding: 4px 0;
+  .color-display{
+    display: inline-block;
+    vertical-align: top;
+    width: 24px;
+    height: 24px;
+    background-color: $grey100;
+    border-radius: 50%;
+    &--rts{
+      background-color: #9B9B9B;
+    }
+    &--ipg{
+      background-color: #F2C029;
+    }
+    &--fns{
+      background-color: #68AD4B;
+    }
+  }
+  .color-title{
+    line-height: 24px;
+    margin: 0 0 0 4px;
   }
 }
 
