@@ -1,0 +1,8 @@
+.p-login{
+	.site-wrapper{
+		min-height: 100vh;
+		.l-body{
+			min-height: calc(100vh - 96px);
+		}
+	}
+}

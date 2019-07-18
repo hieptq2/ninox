@@ -1,0 +1,64 @@
+/* ============================================================================
+   COMPONENTS -> card
+   ========================================================================= */
+
+
+.c-card{
+	display: block;
+	margin: 0 auto 24px;
+	padding: 24px;
+	background-color: #fff;
+	border-radius: $bdrd;
+	@media (max-width: 420px){
+		padding: 16px;
+	}
+	&--mw-sm{
+		max-width: 540px;
+	}
+	&--mw-md{
+		max-width: 720px;
+	}
+	&--mw-lg{
+		max-width: 960px;
+	}
+	&--mw-xl{
+		max-width: 1140px;
+	}
+	&--mw-xxl{
+		max-width: 1440px;
+	}
+
+
+	&--sr-link{
+		text-align: center;
+		color: $grey800;
+		@include transition(
+			transform .2s ease-in-out, 
+			color .2s ease-in-out,
+			background-color .2s ease-in-out
+		);
+		&:hover,
+		&:focus,
+		&:active{
+			text-decoration: none;
+		}
+		&:hover{
+			color: #fff;
+			background-color: $color-primary;
+			@include translateY(-8px);
+		}
+		.sr-title{
+			font-size: 18px;
+			font-weight: 500;
+			@include viewport-min(sm){
+				font-size: 24px;
+			}
+		}
+	}
+
+}
+
+.sr-link-wrap{
+	margin: 25vh 0 0;
+}
+

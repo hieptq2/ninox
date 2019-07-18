@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="iSmart HTML Template">
+  <meta name="keywords" content="">
+  <meta name="author" content="Hiep Ta | henry9.com | contact@henry9.com">
+
+	<title>Report | iSmart</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/favicon.ico">    
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="assets/css/vendor.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  
+</head>
+
+<body>
+	
+	<div id="SiteContent" class="site-wrapper" data-js-module="report">
+		<header class="l-header l-header--fixtop navbar-expand-lg">
+			<div class="container">
+				<div class="l-header__wrapper">
+					<div class="l-header__logo"><a href="#">iSmart</a></div>
+				</div>
+			</div>
+		</header>
+
+		<div class="l-body l-body--has-sidebar l-body--sidebar-in l-profile">
+			<div class="l-body__wrapper">
+				<div class="l-body__sidebar l-body__sidebar--in l-body__sidebar--offcanvas">
+					<div class="c-sidebar"></div>
+					<a href="#" class="sidebar-offcanvas-toggler"><i class="fas fa-angle-left"></i></a>
+				</div>
+				<div class="l-body__content sidebar-in-affected">
+					<ol class="c-breadcrumb">
+				    <li class="c-breadcrumb__item"><a href="#"><i class="fas fa-home"></i> Trang chủ</a></li>
+				    <li class="c-breadcrumb__item"><a href="#">Báo cáo học tập</a></li>
+				    <li class="c-breadcrumb__item"><a href="#">Báo cáo trên hệ thống</a></li>
+				    <li class="c-breadcrumb__item active"><span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</span></li>
+				  </ol>
+				  <div class="c-report h-shadow-1">
+				  	<div class="c-report__header">
+				  		<h1 class="c-report__title h-title-1 h-title-1--sm">Báo cáo trên hệ thống</h1>
+				  	</div>
+				  	<div class="c-report__body">
+				  		<div class="c-report__section-intro">
+				  			<div class="row align-items-center justify-content-between">
+				  				<div class="col-12 col-md">
+										<h2 class="c-report__course-title">Phần Hình học - Chương 1: Đoạn thẳng</h2>
+									</div>
+									<div class="col-12 col-md-auto">
+										<a href="#" class="btn btn-lg btn--primary">Xem khóa học</a>
+									</div>
+				  			</div>
+				  		</div>
+				  		<div class="c-report__progress h-px-16">
+				  			<p><i>Không có báo cáo học tập tương ứng.</i></p>
+				  		</div>
+				  		<div class="c-report__section-01">
+				  			<div class="row">
+					  			<div class="col-12 col-md-8">
+					  				<div class="c-report__progress">
+					  					<div class="row align-items-center">
+					  						<div class="col-md">
+					  							<h3 class="progress-title"><span class="bg-color-green-600">Tiến độ các tiết học</span></h3>
+					  						</div>
+					  						<div class="col-md-auto">
+					  							<div class="progress-color">
+							  						<div class="row text-center">
+							  							<div class="col-md">
+							  								<div class="progress-color__wrap">
+							  									<div class="progress-color__color progress-color__color--completed"></div>
+							  									<div class="progress-color__label">Đã hoàn thành</div>
+							  								</div>
+							  							</div>
+							  							<div class="col-md">
+							  								<div class="progress-color__wrap">
+							  									<div class="progress-color__color progress-color__color--not-completed"></div>
+							  									<div class="progress-color__label">Chưa hoàn thành</div>
+							  								</div>
+							  							</div>
+							  							<div class="col-md">
+							  								<div class="progress-color__wrap">
+							  									<div class="progress-color__color progress-color__color--not-opened"></div>
+							  									<div class="progress-color__label">Chưa được mở</div>
+							  								</div>
+							  							</div>
+							  						</div>
+							  					</div>
+					  						</div>
+					  					</div>
+					  					<div class="progress-chart">
+					  						<div class="row h-py-24">
+					  							<div class="col-md-6">
+					  								<div class="c-chart c-chart--report-progress">
+					  									<div class="c-chart__wrap">
+					  										<canvas id="Chart__LessonProgress--Require" width="320" height="320"></canvas>
+					  										<div class="c-chart__subtitle text-center">Bắt buộc</div>
+					  									</div>
+					  								</div>
+					  							</div>
+					  							<div class="col-md-6">
+					  								<div class="c-chart c-chart--report-progress">
+					  									<div class="c-chart__wrap">
+					  										<canvas id="Chart__LessonProgress--NotRequire" width="320" height="320" class="mx-auto"></canvas>
+					  										<div class="c-chart__subtitle text-center">Không bắt buộc</div>
+					  									</div>
+					  								</div>
+					  							</div>
+					  						</div>
+					  					</div>
+					  				</div>
+					  			</div>
+					  			<div class="col-12 col-md-4">
+					  				<div class="c-report__course-info">
+					  					<div class="lesson-detail__intro-specs">
+												<div class="intro-specs__row">
+													<div class="intro-specs__label">Danh mục</div>
+													<div class="intro-specs__data">Toán</div>
+												</div>
+												<div class="intro-specs__row">
+													<div class="intro-specs__label">Lớp</div>
+													<div class="intro-specs__data">3</div>
+												</div>
+												<div class="intro-specs__row">
+													<div class="intro-specs__label">Ngày bắt đầu</div>
+													<div class="intro-specs__data">12/02/2019</div>
+												</div>
+												<div class="intro-specs__row">
+													<div class="intro-specs__label">Ngày kết thúc</div>
+													<div class="intro-specs__data">18/02/2019</div>
+												</div>
+												<div class="intro-specs__row">
+													<div class="intro-specs__label">Ngôn ngữ</div>
+													<div class="intro-specs__data">Tiếng Anh</div>
+												</div>
+												<div class="intro-specs__row">
+													<div class="intro-specs__label">Tiết học</div>
+													<div class="intro-specs__data">12</div>
+												</div>
+												<div class="intro-specs__row">
+													<div class="intro-specs__label">Bài tập lớn</div>
+													<div class="intro-specs__data">95</div>
+												</div>
+												<div class="intro-specs__row">
+													<div class="intro-specs__label">Bài kiếm tra</div>
+													<div class="intro-specs__data">02</div>
+												</div>
+											</div>
+					  				</div>
+					  			</div>
+					  		</div>
+				  		</div>
+					  	<div class="c-report__progress">
+		  					<div class="row align-items-center">
+		  						<div class="col-md">
+		  							<h3 class="progress-title"><span class="bg-color-cyan-500">Điểm số</span></h3>
+		  						</div>
+		  						<div class="col-md-auto">
+		  							<div class="progress-color">
+				  						<div class="row text-center">
+				  							<div class="col-md">
+				  								<div class="progress-color__wrap">
+				  									<div class="progress-color__color progress-color__color--completed"></div>
+				  									<div class="progress-color__label">Đã hoàn thành</div>
+				  								</div>
+				  							</div>
+				  							<div class="col-md">
+				  								<div class="progress-color__wrap">
+				  									<div class="progress-color__color progress-color__color--not-completed"></div>
+				  									<div class="progress-color__label">Chưa hoàn thành</div>
+				  								</div>
+				  							</div>
+				  							<div class="col-md">
+				  								<div class="progress-color__wrap">
+				  									<div class="progress-color__color progress-color__color--not-opened"></div>
+				  									<div class="progress-color__label">Chưa được mở</div>
+				  								</div>
+				  							</div>
+				  						</div>
+				  					</div>
+		  						</div>
+		  					</div>
+		  					<div class="progress-chart">
+		  						<div class="row align-items-center">
+		  							<div class="col-lg-7">
+		  								<div class="c-chart c-chart--report-score">
+		  									<div class="c-chart__wrap">
+		  										<!-- <canvas id="Chart__LessonScore--EachLesson" width="480" height="320"></canvas> -->
+		  										<div id="test" width="480" height="320"></div>
+		  										<div class="c-chart__average-score-subtitle">Tỷ số điểm từng tiết học (*)</div>
+		  									</div>
+		  								</div>
+		  							</div>
+		  							<div class="col-lg-5 mt-3 mt-lg-0">
+		  								<div class="c-chart c-chart--report-progress">
+		  									<div class="c-chart__wrap">
+		  										<div class="c-chart__average-score-map">
+		  											<div class="score-range-wrapper">
+		  												<div class="score-range js-score-range-01" style="width: 40%; background-color: #FFF2CC">
+			  												<div class="score-range__title">
+			  													<div class="title-percent">> 40%</div>
+			  													<div class="title-content">
+			  														<div class="title-medal"><i class="fas fa-medal"></i></div>
+			  														<div class="title-text">Dũng sĩ diệt ruồi</div>
+			  													</div>
+			  												</div>
+			  											</div>
+			  											<div class="score-range js-score-range-02" style="width: 30%; background-color: #FFE699">
+			  												<div class="score-range__title">
+			  													<div class="title-percent">> 70%</div>
+			  													<div class="title-content">
+			  														<div class="title-medal"><i class="fas fa-medal"></i></div>
+			  														<div class="title-text">Dũng sĩ diệt ruồi</div>
+			  													</div>
+			  												</div>
+			  											</div>
+			  											<div class="score-range js-score-range-03" style="width: 30%; background-color: #FED966">
+			  												<div class="score-range__title">
+			  													<div class="title-percent">< 20%</div>
+			  													<div class="title-content">
+			  														<div class="title-medal"><i class="fas fa-medal"></i></div>
+			  														<div class="title-text">Dũng sĩ diệt ruồi</div>
+			  													</div>
+			  												</div>
+			  											</div>
+		  											</div>
+		  											<div class="top-user-divider" style="left: 50%;">
+		  												<div class="divider-percent">50%</div>
+		  												<div class="divider-icon"><i class="fas fa-angle-top"></i></div>
+		  												<div class="divider-medal"><img src="assets/img/icons/medal-2.png" alt=""></div>
+		  												<div class="divider-label">Dũng sĩ chuyên cần</div>
+		  												<div class="divider-stick"></div>
+		  											</div>
+		  										</div>
+													<div class="c-chart__average-score-subtitle">Tỷ số điểm trung bình (*)</div>
+		  									</div>
+		  								</div>
+		  							</div>
+		  						</div>
+		  						<div class="h-mt-48">
+		  							<div class="c-chart">
+											<div class="c-chart__subtitle text-center"><i>(*) Tỷ số điểm tính dựa trên kết quả lần thử cuối cùng của những tiết học bắt buộc</i></div>
+										</div>
+		  						</div>
+		  					</div>
+		  					<div class="progress-data-table">
+		  						<table class="table table-bordered c-table c-table--report-scores">
+		  							<thead>
+		  								<tr>
+		  									<th>Phần tính điểm</th>
+		  									<th>Lần thử 1</th>
+		  									<th>Lần thử 2</th>
+		  								</tr>
+		  							</thead>
+		  							<tbody>
+		  								<tr class="main-item">
+		  									<td>
+		  										<button data-toggle="collapse" data-target="#subitem1, #subitem2, #subitem3" class="lesson-collapse-toggler"><i class="fas fa-caret-down"></i></button>
+		  										<a href="#" class="lesson-title">Visualization: Column Chart <i class="fas fa-angle-down ml-1"></i></a>
+		  									</td>
+		  									<td colspan="4">60%</td>
+		  								</tr>
+	  									<tr id="subitem1" class="sub-item collapse show">
+		  									<td><div class="lesson-step-title">Luyện tập 01</div></td>
+		  									<td>7/10</td>
+		  									<td>8/10</td>
+		  								</tr>
+		  								<tr id="subitem2" class="sub-item collapse show">
+		  									<td><div class="lesson-step-title">Luyện tập 01</div></td>
+		  									<td>7/10</td>
+		  									<td>8/10</td>
+		  								</tr>
+		  								<tr id="subitem3" class="sub-item collapse show">
+		  									<td><div class="lesson-step-title">Luyện tập 01</div></td>
+		  									<td>7/10</td>
+		  									<td>8/10</td>
+		  								</tr>
+		  								<tr class="main-item">
+		  									<td>
+		  										<a href="#" class="lesson-title">Visualization: Column Chart <i class="fas fa-angle-down ml-1"></i></a>
+		  									</td>
+		  									<td>6/10</td>
+		  									<td>-</td>
+		  								</tr>
+		  								<tr class="main-item">
+		  									<td>
+		  										<button data-toggle="collapse" data-target="#subitem4" class="lesson-collapse-toggler collapsed"><i class="fas fa-caret-down"></i></button>
+		  										<a href="#" class="lesson-title">Visualization: Column Chart <i class="fas fa-angle-down ml-1"></i></a>
+		  									</td>
+		  									<td colspan="4">60%</td>
+		  								</tr>
+		  								<tr id="subitem4" class="sub-item collapse">
+		  									<td><div class="lesson-step-title">Luyện tập 01</div></td>
+		  									<td>7/10</td>
+		  									<td>8/10</td>
+		  								</tr>
+		  							</tbody>
+		  						</table>
+		  					</div>
+		  				</div>
+				  	</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="l-footer l-footer--page">
+			<div class="l-footer__copyright text-center">
+				Copyright 2019 Ⓒ by iSMART Education. All rights reserved.
+			</div>
+		</footer>
+	</div>
+
+	<!-- Scripts -->
+	<!-- <script data-main="assets/js/main" src="assets/js/require.js"></script>
+
+	<script>
+		requirejs.config({
+		  paths: {
+		  	'jquery':           'libs/jquery.min',
+	      'highcharts':       'https://code.highcharts.com/highcharts',
+	    },
+    	shim:{
+	      'jquery': {
+	        exports: '$',
+	      },
+	      'highcharts':{
+	      	deps: ['jquery'],
+	        exports: 'Highcharts'
+	      }
+    	}
+		});
+	</script> -->
+
+	<!-- Sample Chart -->
+	<script src="assets/js/libs/jquery.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+
+
+	<script>
+		// require(['jquery', 'highcharts'], function ($, Highcharts) {
+			// define(['highcharts'], function (chart){
+		    var height= $("#test").height();
+		    var width= $("#test").width();
+		    console.log(width);
+
+		    var dataColor = {"completed":"#e84e1c","incomplete":"#ffffff","available":"#eeeeee"};
+		    //Biểu đồ các tiến độ tiết học bắt buộc
+		    // Build the chart
+
+		    //Biểu đò điểm tiết học
+		    var chart1 = Highcharts.chart('test', {
+		        chart: {
+		            type: 'bar',
+		            marginTop: 50,
+		            paddingTop: 50,
+		            lineHeight: 30,
+		        },
+		        title: {
+		            text: ''
+		        },
+		        // type: 'category',
+		        tooltip: {
+		            valueSuffix: ' %'
+		        },
+		        xAxis: {
+		            type: 'category',
+		            margin: 0
+		            // tickWidth: 0
+		        },
+		        yAxis: {
+		            max: 100,
+		            labels: {
+		                padding: 10
+		            },
+		            title: {
+		                text: null,
+
+		            },
+		            plotBands: [
+		                {
+		                    from: 0,
+		                    to: 39.9,
+		                    color: '#FFF2CC',
+		                    label: {
+		                        text: '<div id="Hightcharts__TooltipLMTS" class="highcharts__tooltips h-shadow-1">Lính mới tập sự</div>',
+		                        style: {
+		                            color: '#333333'
+		                        },
+		                        useHTML: true,
+		                        y: 20
+		                    },
+		                    events: {
+		                    	mouseover: function(){
+		                    		$('#Hightcharts__TooltipLMTS').addClass('is-show');
+		                    	},
+		                    	mouseout: function(){
+					                  $('#Hightcharts__TooltipLMTS').removeClass('is-show');
+					                }
+		                    }
+
+		                },
+		                {
+		                    from: 40,
+		                    to: 69.9,
+		                    color: '#FFE699',
+		                    label: {
+		                        text: '<div id="Hightcharts__TooltipDSCC" class="highcharts__tooltips h-shadow-1">Dũng sĩ chuyên cần</div>',
+		                        style: {
+		                            color: '#333333'
+		                        },
+		                        useHTML: true,
+		                        y: 20
+
+		                    },
+		                    events: {
+		                    	mouseover: function(){
+		                    		$('#Hightcharts__TooltipDSCC').addClass('is-show');
+		                    	},
+		                    	mouseout: function(){
+					                  $('#Hightcharts__TooltipDSCC').removeClass('is-show');
+					                }
+		                    }
+		                },
+		                {
+		                    from: 70,
+		                    to: 100,
+		                    color: '#FED966',
+		                    label: {
+		                        text: '<div id="Hightcharts__TooltipCGBT" class="highcharts__tooltips h-shadow-1">Chuyên gia biết tuốt</div>',
+		                        style: {
+		                            color: '#333333'
+		                        },
+		                        useHTML: true,
+		                        y: 20
+		                    },
+		                    events: {
+		                    	mouseover: function(){
+		                    		$('#Hightcharts__TooltipCGBT').addClass('is-show');
+		                    	},
+		                    	mouseout: function(){
+					                  $('#Hightcharts__TooltipCGBT').removeClass('is-show');
+					                }
+		                    }
+		                }
+		            ]
+		        },
+		        plotOptions: {
+		            // bar: {
+		            //     dataLabels: {
+		            //         enabled: true
+		            //     }
+		            // },
+		            column: {
+		                groupPadding: 0
+		            },
+		            series: {
+		                borderWidth: 1,
+		                borderColor: '#aaaaaa',
+		                pointWidth: 30,
+		                pointPadding: 0,
+		                marginBottom: 1,
+		                marginLeft: 0,
+		                marginRight: 0,
+		                marginTop: 0,
+		                dataLabels: {
+		                    enabled: true,
+		                    format: '40%'
+		                }
+		            }
+		        },
+		        legend: {
+		             enabled: false,
+		        },
+		        credits: {
+		            enabled: false
+		        },
+		        series: [{"name":"T\u1ef7 s\u1ed1 \u0111i\u1ec3m","data":[{"name":"","color":"","y":null},{"name":"Multiplication tables 2","color":"#ffffff","y":100},{"name":"Multiplication tables 3","color":"#ffffff","y":50},{"name":"Multiplication tables 5","color":"#ffffff","y":0},{"name":"Unit 2","color":"#ffffff","y":0}]}]
+		    });
+		  // });
+		// });
+			
+	</script>
+</body>
+
+</html>

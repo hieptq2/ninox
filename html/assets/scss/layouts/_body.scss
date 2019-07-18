@@ -1,0 +1,98 @@
+.l-body{
+	$s: &;
+	min-height: calc(100vh - 64px);
+	&__wrapper{
+		//
+	}
+	&__sidebar{
+		$bg-color--sidebar: $lblue50;
+		position: fixed;
+		top: 64px; left: 0; bottom: 0;
+		z-index: 1000;
+		width: 300px;
+		@include viewport-min(sm){
+			width: 320px;
+		}
+		padding: 4px;
+		background-color: $bg-color--sidebar;
+		background-image: url('../img/cloud-sidebar.png');
+		background-position: bottom center;
+		background-repeat: no-repeat;
+		background-size: 320px auto;
+		box-shadow: 1px 0 3px rgba(#000,.16);
+		@include translateX(-100%);
+		@include transition(transform .4s map-get($g-easing, 'ease-in-out-cubic'));	
+		.sidebar-offcanvas-toggler{
+			position: absolute;
+			top: 50%; margin-top: -48px;
+			left: 100%;
+			display: block;
+			padding: 0 4px 0 0;
+			line-height: 96px;
+			width: 32px;
+			font-size: 18px;
+			text-align: center;
+			color: $grey400;
+			background-color: $bg-color--sidebar;
+			border-radius: 0 32px 32px 0;
+			box-shadow: 2px 0 3px rgba(#000,.16);
+			&:active{
+				// background-color: $grey50;
+				box-shadow: 2px 0 1px rgba(#000,.12);
+			}
+			i.fas{
+				&:before{
+					content: "\f105";
+				}
+			}
+		}
+	}
+
+	&--sidebar-in{
+		#{$s}__sidebar{
+			@include translateX(0);
+			.sidebar-offcanvas-toggler{
+				i.fas{
+					&:before{
+						content: "\f104";
+					}
+				}
+			}
+			@include viewport-min(lg){
+				& + .sidebar-in-affected{
+					margin-left: 320px;
+				}
+				& + .l-body__content{
+					.sidebar-in-affected{
+						margin-left: 320px;
+						&--half{
+							margin-left: 160px;
+						}
+					}
+				}
+			}	
+		}
+		& + .l-footer{
+			&.sidebar-in-affected{
+				margin-left: 320px;
+				&--half{
+					margin-left: 160px;
+				}
+			}
+		}
+	}
+	&__content{
+		
+		padding: 16px 16px;
+		@include viewport-min(sm){
+			padding: 16px 24px;
+		}
+		@include viewport-min(lg){
+			padding: 24px 48px;
+		}
+	}
+}
+
+.sidebar-in-affected{
+	@include transition(margin .4s map-get($g-easing, 'ease-in-out-cubic'));
+}

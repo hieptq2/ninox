@@ -1,0 +1,19 @@
+.c-slick{
+	display: none;
+	&.slick-initialized{
+		display: block;
+	}
+	.slick-slide{
+		z-index: 50;
+		@include transition(
+			opacity .2s ease-in-out,
+			transform .2s ease-in-out
+		);
+		&:focus{
+			outline: none;
+		}
+		&.slick-center{
+			z-index: 60;
+		}
+	}
+}

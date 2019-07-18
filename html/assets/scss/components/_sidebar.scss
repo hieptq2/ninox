@@ -1,0 +1,516 @@
+.c-sidebar{
+	padding: 20px 20px 152px;
+	height: calc(100vh - 70px);
+	overflow: auto;
+	overflow: overlay;
+	@include scrollbar(6px, rgba(#000, .12), rgba(#000, .04));
+	&__user{
+		padding: 12px;
+		background-color: #fff;
+		// border: 2px solid rgba(#000,.08);
+		box-shadow: 1px 1px 0 3px $grey300;
+		border-radius: 24px;
+		.btn{
+			box-shadow: 0 0 0 0;
+		}
+		.user{
+			//xx
+			&-action-head{
+				margin-bottom: 12px;
+			}
+			&-avatar{
+				display: block;
+				.c-avatar{
+					box-shadow: 0 0 0 0;
+					border-radius: 12px;
+					&__inner{
+						border-radius: 10px;
+					}
+				}
+				&:hover{
+					opacity: .8;
+				}
+			}
+			&-header{
+				@include display-flex();
+				@include align-items(center);
+				margin: 0 0 2px;
+			}
+			&-title{
+				@include flex(1 1 auto);
+				min-width: 0;
+				margin: 0 0 0;
+				line-height: 36px;
+				font-size: 30px;
+				font-weight: 700;
+				// letter-spacing: -1px;
+				a{
+					color: $color-secondary;
+					&:hover{
+						color: $grey600;
+					}
+				}
+			}
+			&-subtitle{
+				margin: 4px 0 0;
+				font-size: 14px;
+				// color: #fff;
+				color: $grey500;
+			}
+			&-setting{
+				@include flex(0 0 auto);
+				min-width: 0;
+				margin: -4px -4px auto 8px;
+				padding: 0;
+				&__toggler{
+					@extend %button-reset;
+					@extend %no-outline;
+					display: block;
+					padding: 0;
+					width: 22px;
+					padding: 2px 0 0;
+					line-height: 20px;
+					font-size: 14px;
+					text-align: center;
+					cursor: pointer;
+					border-radius: 50%;
+					color: #fff;
+					background-color: material-color('grey', '300');
+					@include transition(background-color .2s ease-in-out, background-color .2s ease-in-out);
+					&:hover{
+						background-color: material-color('grey', '400');
+					}
+					&:active{
+						background-color: $grey300;
+					}
+				}
+				&__dropdown-menu{
+					// padding: 4px 0;
+					// border-radius: 16px;
+					overflow: hidden;
+					border-color: rgba(#000,.04);
+				}
+			}
+			&-gems{
+				margin: 10px 0 0;
+				line-height: 24px;
+				&__wrapper{
+					position: relative;
+					display: inline-block;
+					vertical-align: top;
+					padding: 3px 10px;
+					font-size: 0;
+					background-color: material-color('yellow', '300');
+					box-shadow: 1px 1px 0 3px material-color('yellow', '600');
+					border-radius: 18px;
+					cursor: default;
+				}
+				&__image{
+					display: inline-block;
+					vertical-align: top;
+					width: 22px;
+					height: 22px;
+					background-image: url('../img/icons/gem.png');
+					background-size: 100%;
+					background-repeat: no-repeat;
+				}
+				&__count{
+					display: inline-block;
+					vertical-align: top;
+					margin: 0 0 0 6px;
+					line-height: 24px;
+					font-size: 18px;
+					font-weight: 700;
+					font-style: italic;
+					color: material-color('blue', '600');
+				}
+				&__count-hover{
+					position: absolute;
+					bottom: -28px; left: 50%;
+					@include translateX(-50%);
+					padding: 2px 8px;
+					line-height: 20px;
+					font-size: 14px;
+					font-weight: 600;
+					color: #fff;
+					background-color: $grey700;
+					border-radius: 8px;
+					z-index: 900;
+					opacity: 0;
+					@include transition(opacity .1s ease-in-out);
+					&:after{
+						content: "";
+						position: absolute;
+						left: 50%; margin-left: -6px;
+						bottom: 100%; margin-bottom: 0;
+						@include triangle('top', 12px, 6px, #555)
+					}
+				}
+				&:hover{
+					.user-gems__count-hover{
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	&__nav-menu{
+		margin: 24px 0;
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			&:after,
+			&:before{
+				z-index: 80;
+			}
+			li{
+				position: relative;
+				z-index: 100;
+				a{
+					display: block;
+					position: relative;
+					z-index: 100;
+					
+					@include transition(
+						padding .2s ease-in-out,
+						top .2s ease-in-out,
+						background-color .2s ease-in-out,
+						box-shadow .2s ease-in-out
+					);
+				}
+			}
+		}
+		ul.nav-mainlist{
+			li{
+				a{
+					top: 0;
+					font-weight: 600;
+					&:hover{
+						opacity: .9;
+					}
+				}
+			}
+			& > li{
+				margin: 0 0 8px;
+				& > a{
+					padding: 10px 32px 10px 20px;
+					line-height: 24px;
+					font-size: 18px;
+					// color: $color-secondary;
+					// background-color: #fff;
+					color: #fff;
+					background-color: $color-secondary;
+					border-radius: 24px;
+					box-shadow: 1px 1px 0 2px lighten($color-secondary, 28%);
+					.item-icon{
+						display: block;
+						position: absolute;
+						line-height: 28px;
+						font-size: 14px;
+						top: 8px; right: 20px;
+						img{
+							display: block;
+							width: 28px;
+							height: 28px;
+						}
+						// opacity: .6;
+					}
+					&:active{
+						top: 2px;
+						box-shadow: 1px 1px 0 1px $grey200;
+					}
+				}
+				&:hover{
+					& > a{
+						padding-left: 28px;
+					}
+				}
+				&.active{
+					& > a{
+						padding-left: 20px;
+						&:hover{
+							padding-left: 20px;
+						}
+					}
+					& > a{
+						color: #fff;
+						background-color: $color-primary--lighter;
+						box-shadow: 1px 1px 0 2px lighten($color-primary, 28%);
+						&:active{
+							top: 0;
+						}
+					}
+				}
+				&.need-upgrade{
+					& > a{
+						color: #fff;
+						background-color: lighten($color-secondary, 20%);
+						box-shadow: 1px 1px 0 2px lighten($color-secondary, 32%);
+						padding-left: 20px;
+						&:hover{
+							padding-left: 20px;
+						}
+						&:active{
+							top: 0;
+						}
+					}
+				}
+			}
+		}
+		ul.nav-sublist{
+			position: relative;
+			padding: 10px 8px 2px 24px;
+			&:before{
+				content: "";
+				display: block;
+				position: absolute;
+				top: -8px;
+				left: 12px;
+				bottom: 20px;
+				width: 3px;
+				background-color: $grey300;
+				// background-color: material-color('light-blue', '100');
+				border-radius: 0 0 0 4px;
+			}
+			& > li{
+				margin: 0 0 4px;
+				position: relative;
+				&:before{
+					content: "";
+					display: block;
+					position: absolute;
+					left: -12px;
+					width: 24px;
+					height: 3px;
+					bottom: 14px;
+					background-color: $grey300;
+					border-radius: 0 0 0 4px;
+				}
+				& > a{
+					padding: 8px 16px;
+					line-height: 20px;
+					font-size: 14px;
+					color: #fff;
+					background-color: lighten(set-color('secondary'), 8%);
+					box-shadow: 1px 1px 0 1px lighten(set-color('secondary'), 36%);
+					border-radius: 16px;
+					&:active{
+						top: 2px;
+						box-shadow: 0 0 0 0 lighten(set-color('secondary'), 36%);
+					}
+				}
+				&:hover{
+					& > a{
+						// padding-left: 20px;
+					}
+				}
+				&.active{
+					&:hover{
+						// & > a{
+						// 	padding-left: 0;
+						// }
+					}
+					& > a{
+						background-color: lighten($color-primary, 12%);
+						box-shadow: 1px 1px 0 2px lighten($color-primary, 36%);
+						&:active{
+							top: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	&__top-users{
+		margin: 32px 0 0;
+		padding: 32px 0 0;
+		border-top: 3px dashed #fff;
+		.top-users{
+			background-color: #fff;
+			border-radius: 16px;
+			&__header{
+				padding: 12px 16px;
+			}
+			&__title{
+				margin: 0;
+				font-size: 16px;
+				font-weight: 700;
+			}
+			&__body{
+				padding: 16px;
+				background-color: set-color('primary', 'lighter');
+			}
+		}
+	}
+	&__lboard{
+		margin: 48px 0 0;
+		padding: 0 0 0;
+	}
+	.c-lboard--sidebar{
+		background-color: #fff;
+		box-shadow: 1px 1px 0 3px $grey300;
+		border-radius: $bdrd;
+		&__header{
+			display: block;
+			@include display-flex();
+			@include align-items(center);
+			@include justify-content(space-between);
+			padding: 8px 20px;
+			color: $grey900;
+			background-color: #fff;
+			border-radius: 24px 24px 0 0;
+		}
+		&__title{
+			flex: 1 1 auto;
+			min-width: 0;
+			margin: 0;
+			font-family: $ff-pangolin;
+			font-size: 20px;
+			font-weight: 700;
+			a{
+				padding: 12px 20px;
+				display: block;
+				color: $grey900;
+				border-radius: 14px 14px 0 0;
+				&:hover{
+					color: $color-primary;
+				}
+			}
+		}
+		&__icon{
+			flex: 0 0 auto;
+			min-width: 0;
+			padding: 0 0 6px 8px;
+			img{
+				display: block;
+				width: 32px;
+				height: 32px;
+			}
+		}
+		&__table{
+			margin-top: 0;
+			padding: 0;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+		&__footer{
+			border-radius: 0 0 24px 24px;
+			background-color: #fff;
+			
+		}
+		&__view-all{
+			display: block;
+			padding: 8px 16px;
+			text-align: center;
+			font-size: 14px;
+			font-weight: 600;
+			color: $grey600;
+			&:hover{
+				color: $color-primary;
+			}
+		}
+	}
+	.c-lboard{
+		&__table-tbody{
+			margin: 0 4px;
+			padding: 12px 8px;
+			max-height: 320px;
+			overflow: auto;
+			overflow: overlay;
+			@include scrollbar(4px, rgba(#000,.24), rgba(#000,.12), 2px);
+			.table-single-user{
+				margin: 0 0 8px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				.user{
+					&__place{
+						display: none;
+					}
+					&__info{
+						@include flex(1 1 auto);
+						margin-left: 0;
+						padding: 4px 0 4px 8px;
+					}
+					&__info-content{
+						@include flex(1 1 auto);
+						min-width: 0;
+						margin: 0 0 0 8px;
+					}
+					&__avatar{
+						min-width: 0;
+						.avatar-wrapper{
+							width: 56px;
+							height: 56px;			
+							border-width: 2px;
+						}
+					}
+					&__title{
+						margin: 0 0 0 0;
+						line-height: 24px;
+						font-size: 16px;
+						font-weight: 600;
+					}
+					&__meta-gems{
+						margin: 2px 0 0;
+						padding: 1px 8px;
+						background-color: rgba(#fff,.6);
+						border-radius: 12px;
+						line-height: 18px;
+						white-space: nowrap;
+						overflow: hidden;
+						.meta-icon{
+							display: inline-block;
+							vertical-align: top;
+							line-height: 18px;
+							img{
+								display: block;
+								width: 18px;
+								height: 18px;
+							}
+						}
+						.meta-count{
+							display: inline-block;
+							vertical-align: top;
+							line-height: 20px;
+							// font-family: $ff-cheri;
+							font-size: 12px;
+							font-weight: 700;
+							color: $grey800;
+						}
+					}
+					&__collections{
+						padding: 4px 0;
+						margin: 0;
+						display: block;
+						flex: 0 0 auto;
+					}
+					&__single-item{
+						flex: 0 0 50%;
+						width: 48px;
+						.item{
+							&-icon{
+								width: 32px;
+								height: 32px;
+								padding: 6px;
+								&--gems{
+									padding: 4px;
+								}
+								&--cup{
+									padding: 2px;
+								}
+							}
+							&-count{
+								top: 22px;
+								line-height: 16px;
+								padding: 0 4px;
+								font-size: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

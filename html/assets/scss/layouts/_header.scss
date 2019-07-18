@@ -1,0 +1,501 @@
+/* ============================================================================
+   LAYOUT -> header
+   ========================================================================= */
+
+
+.l-header{
+	$s: &;
+	background-color: set-color('primary');
+
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.c-dropdown-menu{
+		z-index: 1015;
+
+		&.dropdown-menu-right{
+			// &:after{
+			// 	content: "";
+			// 	display: block;
+			// 	position: absolute;
+			// 	top: -10px;
+			// 	right: 24px;
+			// 	@include triangle(top, 18px, 10px, $grey400);
+			// }
+			// &.h-shadow-2d{
+			// 	&:after{
+			// 		top: -12px;
+			// 		right: 20px;
+			// 	}
+			// }
+		}
+		&--language{
+			min-width: 0;
+			.c-dropdown-menu{
+				&__item{
+					background-color: #fff;
+					&:hover{
+						background-color: $grey100;
+					}
+					&.active{
+						color: $grey900;
+						background-color: $grey300;
+					}
+				}
+			}
+		}
+	}
+	.container{
+		@include viewport-max(lg){
+			width: 100%;
+			max-width: none;
+		}
+	}	
+	&__wrapper{
+		@include display-flex;
+		@include align-items(center);
+		@include justify-content(space-between);
+		position: relative;
+		height: 64px;
+		@include viewport-min(lg){
+			height: 64px;
+		}
+	}
+	&__logo{
+		@include flex(0 0 auto);
+		min-width: 0;
+		margin: 0;
+		@include viewport-max(lg){
+			padding-left: 16px;
+		}
+		a{
+			display: block;
+			width: 74px;
+			height: 40px;
+			text-indent: -9999px;
+			background-image: url('../img/ismart-logo-white.png');
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			@include viewport-min(lg){
+				width: 89px;
+				height: 48px;
+			}
+		}
+	}
+	&__nav{
+		@include flex(1 1 auto);
+		@include justify-content(flex-end);
+		min-width: 0;
+		@include viewport-max(lg){
+			position: absolute;
+			top: 100%; left: 0; right: 0;
+			background-color: #fff;
+			z-index: 1000;
+			box-shadow: 0 1px 5px 0 rgba(#000, .16);
+			ul.nav-list{
+				li{
+					margin: 0 24px;
+					border-bottom: 1px solid $grey200;
+					a{
+						display: block;
+						padding: 12px 0;
+						line-height: 24px;
+						font-size: 18px;
+						color: #333;
+						text-align: center;
+						&:active{
+							color: set-color('primary');
+						}
+					}
+				}
+			}
+		}
+		@include viewport-min(lg){
+			ul.nav-list{
+				display: block;
+				font-size: 0;
+				text-align: right;
+				li{
+					position: relative;
+					display: inline-block;
+					vertical-align: top;
+					font-size: 16px;
+					& + li{
+						margin-left: 17px;
+						&:after{
+							content: "";
+							display: block;
+							position: absolute;
+							top: 50%; margin-top: -14px;
+							left: -9px;
+							width: 1px;
+							height: 28px;
+							background-color: rgba(#fff,.16);
+						}
+					}
+					a{
+						display: block;
+						padding: 16px 20px;
+						line-height: 32px;
+						font-size: 18px;
+						color: #fff;
+						white-space: nowrap;
+						&:hover{
+							background-color: set-color('primary', 'darker');
+						}
+					}
+				}
+			}
+		}
+	}
+	&__search{
+		
+		@include viewport-max(lg){
+			position: absolute;
+			top: 100%; left: 0; right: 0;
+			background-color: #fff;
+			box-shadow: 0 2px 0 1px $grey300;
+		}
+		@include viewport-min(lg){
+			@include flex(1 1 auto);
+			margin: 0 96px 0 48px;
+		}
+		.form-group{
+			
+		}
+		.search-wrap{
+			position: relative;
+			margin: 0;
+			width: 100%;
+			max-width: 640px;
+			border-radius: 24px;
+			background-color: #fff;
+			@include viewport-max(lg){
+				margin: 16px;
+				width: auto;
+			}
+		}
+		.search-icon{
+			position: absolute;
+			top: 0; left: 0;
+			width: 44px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 18px;
+			z-index: 300;
+			color: material-color('grey', '400');
+			text-align: center;
+			@include transition(transform .2s ease-in-out);
+		}
+		.search-input{
+			min-height: 40px;
+			height: 40px;
+			border: 0;
+			padding-left: 44px;
+			&:focus{
+				& + .search-icon{
+					@include translateY(2px);
+				}
+			}
+		}
+	}
+	&__nav-icons{
+		margin: 0 -8px 0 0px;
+		@include viewport-min(lg){
+			margin: 0 -8px 0 16px;
+		}
+		ul.list-item-icons{
+			@include display-flex();
+			li{
+				@include flex(0 0 auto);
+			}
+			.item-toggle{
+				position: relative;
+				display: block;
+				padding: 8px 20px;
+				line-height: 48px;
+				font-size: 28px;
+				color: $grey200;
+				text-shadow: 2px 3px 0 $grey600;
+				&__nt-count{
+					bottom: 50%; left: 50%;
+					position: absolute;
+					display: block;
+					font-family: $ff-pangolin;
+					font-weight: 700;
+					padding: 2px 8px 1px;
+					line-height: 22px;
+					font-size: 14px;
+					background-color: rgba($grey900, .8);
+					text-shadow: 0 0 0 transparent; 
+					border-radius: 12px;
+				}
+				&--language{
+					.language-flag{
+						display: block;
+						margin: 11px 0;
+						width: 26px;
+						height: 26px;
+						box-shadow: 0 0 0 2px $grey200;
+					}
+				}
+				&--user{
+					.user-avatar{
+						margin: 9px 3px;
+						display: block;
+						width: 32px;
+						height: 32px;
+						background-color: #fff;
+						border-radius: 8px;
+						box-shadow: 0 0 0 2px $grey200;
+						img{
+							display: block;
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							background-color: #fff;
+							border-radius: 8px;
+						}
+					}
+				}
+				&.is-activated{
+					color: #fff;
+				}
+			}
+		}
+		.language-flag{
+			display: inline-block;
+			vertical-align: middle;
+			// margin: 8px 0 0;
+			width: 24px;
+			height: 24px;
+			background-color: $grey200;
+			border-radius: 50%;
+			@extend %bg-cover;
+			&--uk{
+				background-image: url('../img/icons/flag-uk.png');
+			}
+			&--vi{
+				background-image: url('../img/icons/flag-vi.png');
+			}
+		}
+		.language-title{
+			font-weight: 600;
+			margin: 0 0 0 8px;
+		}
+	}
+	&__toggler{
+		@include flex(1 1 auto);
+		min-width: 0;
+		text-align: right;
+		@include viewport-min(lg){
+			display: none;
+		}
+		.navbar-toggler{
+			display: inline-block;
+			vertical-align: top;
+			line-height: 56px;
+			width: 56px;
+			margin: 0;
+			padding: 0;
+			font-size: 24px;
+			color: #fff;
+			border: 0;
+			&:focus{
+				outline: none;
+			}
+			&:active{
+				outline: none;
+				background-color: set-color('primary', 'darker');
+			}
+			i{
+				&:before{
+					content: "\f00d";
+				}
+			}
+			&.collapsed{
+				i{
+					&:before{
+						content: "\f0c9";
+					}
+				}
+			}
+		}
+		&--search{
+			.navbar-toggler{
+				i{
+					&:before{
+						content: "\f010";
+					}
+				}
+				&.collapsed{
+					i{
+						&:before{
+							content: "\f002";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--bg-white{
+		background-color: #fff;
+		@extend .h-shadow-1;
+		.l-header{
+			//xx
+			&__logo{
+				a{
+					background-image: url('../img/ismart-logo.png');
+				}
+			}
+			&__nav{
+
+			}
+			&__nav-icons{
+				ul.list-item-icons{
+					.item-toggle{
+						color: $grey700;
+						text-shadow: 2px 3px 0 $grey300;
+						&__nt-count{
+							color: #fff;
+							background-color: $color-primary;
+						}
+						&--language{
+							.language-flag{
+								box-shadow: 0 0 0 2px $grey300;
+							}
+						}
+					}
+
+				}
+			}
+			&__toggler{
+				.navbar-toggler{
+					color: $color-secondary;
+				}
+			}
+		}
+	}
+
+	&--fixtop{
+		position: fixed;
+		top: 0; left: 0; right: 0;
+		z-index: 1010;
+		& + .l-body{
+			margin-top: 64px;
+		}
+		& + .alert--under-header{
+			position: fixed;
+			top: 64px; left: 0; right: 0;
+			& + .l-body{
+				margin-top: 64px + 44px;
+				.l-body__sidebar{
+					top:  64px + 44px;
+				}
+				.c-lesson{
+					.lesson-timeline{
+						&-fixtop{
+							&.is-activated{
+								top: 64px + 44px;
+							}
+						}
+					}
+				}
+			}
+			& + .alert--under-header{
+				position: fixed;
+				top: 64px + 44px; left: 0; right: 0;
+				& + .l-body{
+					margin-top: 64px + 44px + 44px;
+					.l-body__sidebar{
+						top:  64px + 44px + 44px;
+					}
+					.c-lesson{
+						.lesson-timeline{
+							&-fixtop{
+								&.is-activated{
+									top: 64px + 44px + 44px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--landing{
+		background-color: transparent;
+		@include transition(background-color .2s ease-in-out);
+
+		&-fixtop{
+			position: fixed;
+			top: 0; left: 0; right: 0;
+			z-index: 1020;
+			@include viewport-min(lg){
+				#{$s}__nav{
+					ul.nav-list{
+						li{
+							padding: 12px 0;
+							a{
+								padding: 4px 20px;
+								border-radius: 4px;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.js-away-from-top{
+			background-color: set-color('primary');
+			@include viewport-min(lg){
+				#{$s}__nav{
+					ul.nav-list{
+						li{
+							margin-top: 0;
+							a{
+								padding: 16px 20px;
+								border-radius: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--login{
+		background-color: transparent;
+		#{$s}__wrapper{
+			@include viewport-min(lg){
+				height: 96px;
+			}
+		}
+		#{$s}__logo{
+			@include viewport-max(lg){
+				padding-left: 16px;
+			}
+			a{
+				background-image: url('../img/ismart-logo.png');
+				@include viewport-min(lg){
+					width: 148px;
+					height: 80px;
+				}
+			}
+		}
+	}
+
+	&--faq{
+		position: relative;
+		z-index: 1000;
+		&.h-shadow-1{
+			box-shadow:  0 0 0 transparent;
+		}	
+	}
+
+}
+
+

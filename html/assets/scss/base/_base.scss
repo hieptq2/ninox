@@ -1,0 +1,22 @@
+/* ============================================================================
+   BASE -> base
+   ========================================================================= */
+html{
+	// font-size: 16px;
+}
+
+body{
+	color: set-color('text');
+	background-color: set-color('background');
+	background-image: url('../img/background.png');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center center;
+}
+
+[disabled]{
+	pointer-events: none;
+}
+img{
+	max-width: 100%;
+}

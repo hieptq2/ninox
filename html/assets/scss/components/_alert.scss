@@ -1,0 +1,126 @@
+/* ============================================================================
+   COMPONENTS -> alert
+   ========================================================================= */
+
+
+/* ============================================================================
+   COMPONENTS -> alert
+   ========================================================================= */
+
+
+.alert{
+	$s: &;
+	border-width: 3px;
+	font-size: 14px;
+	padding: 8px 12px;
+	max-width: 80vw;
+	@include viewport-min(md){
+		font-size: 16px;
+		padding: 10px 20px;
+	}
+	@include viewport-min(xl){
+		padding: 12px 24px;
+	}
+	&-dismissible{
+		padding-right: 64px;
+		.close{
+			@extend %no-outline;
+			font-size: 48px;
+			padding: 0 12px;
+			@include transition(color .2s ease-in-out);
+			span{
+				font-size: 48px;
+			}
+			&:hover{
+				// color: material-color('grey', '500');
+			}
+		}
+	}
+	&-dismissible{
+		.close{
+			span{
+				display: block;
+				line-height: 36px;
+				top: 0;
+				font-size: 28px;
+				@include viewport-min(md){
+					line-height: 32px;
+					font-size: 44px;
+				}
+				@include viewport-min(xl){
+					line-height: 48px;
+					font-size: 44px;
+				}
+			}
+		}
+	}
+	&--under-header{
+		@include display-flex();
+		@include align-items(center);
+		margin: 0;
+		padding: 0;
+		height: 44px;
+		line-height: 18px;
+		font-size: 14px;
+		font-weight: 600;
+		padding: 0 24px;
+		border-radius: 0;
+		z-index: 1005;
+		max-width: none;
+		#{$s}__wrapper{
+			flex: 1 1 auto;
+		}
+		#{$s}__content{
+			line-height: 18px;
+			font-size: 12px;
+			font-weight: 600;
+			@include multi-line-ellipsis(20px, 2, false);
+		}
+		@include viewport-max(md){
+			padding: 0 12px;
+			.row{
+				margin: 0 -4px;
+				[class^="col"]{
+					padding: 0 4px;
+				}
+			}
+		}
+	}
+	&--change-password{
+		font-size: 18px;
+		text-align: center;
+		.alert{
+			&-icon{
+				margin: 0 0 8px;
+				font-size: 48px;
+			}
+		}
+	}
+}
+
+.alert-wrapper{
+	position: relative;
+	z-index: 1010;
+	&--fix-top-right{
+		position: fixed;
+		top: 80px; right: 16px;
+		width: 50%;
+		max-width: 480px;
+		min-width: 280px;
+	}
+}
+
+.c-message{
+	$s: &;
+	&--no-content{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 40vh;
+		min-height: 200px;
+		background-color: $grey50;
+		border: 2px dashed $grey200;
+		border-radius: $bdrd;
+		font-size: 18px;
+	}
+}

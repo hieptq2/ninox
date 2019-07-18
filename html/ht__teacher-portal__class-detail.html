@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="iSmart HTML Template">
+  <meta name="keywords" content="">
+  <meta name="author" content="Hiep Ta | henry9.com | contact@henry9.com">
+
+	<title>Teacher Portal | iSmart</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/favicon.ico">    
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="assets/css/vendor.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  
+</head>
+
+<body>
+	
+	<div id="SiteContent" class="site-wrapper" data-js-module="report">
+		<header class="l-header l-header--fixtop navbar-expand-lg">
+			<div class="container">
+				<div class="l-header__wrapper">
+					<div class="l-header__logo"><a href="#">iSmart</a></div>
+				</div>
+			</div>
+		</header>
+
+		<div class="l-body l-teacher">
+			<div class="l-body__wrapper">
+				<div class="l-body__content sidebar-in-affected">
+					<ol class="c-breadcrumb">
+				    <li class="c-breadcrumb__item"><a href="#"><i class="fas fa-home"></i> Trang chủ</a></li>
+				    <li class="c-breadcrumb__item active"><span>1A4</span></li>
+				  </ol>
+				  <div class="l-portal c-card h-shadow-1">
+				  	<div class="l-portal__header">
+				  		<h1 class="l-portal__welcome-title h-title-1 h-title-1--sm">1A4</h1>
+				  	</div>
+				  	<div class="l-portal__body">
+				  		<div class="l-portal__data">
+				  			<div class="c-table-data">
+				  				<div class="c-table-data__header">
+				  					<div class="c-table-data__title"><i class="fas fa-users"></i> Sĩ số: <b>33</b></div>
+				  					<div class="c-table-data__info">Trường: Trung Văn A</div>
+				  				</div>
+				  				<div class="c-table-data__table">
+				  					<table id="table_id" class="c-datatable table c-table c-table--portal c-table--portal-single-class js-datatable--single-class">
+									    <thead>
+									      <tr>
+									       	<th>Học sinh</th>
+									       	<th>Chủ đề đang tham gia</th>
+									       	<th>Chủ đề đã tham gia</th>
+									       	<th>Số kim cương</th>
+									      </tr>
+									    </thead>
+									    <tbody>
+									    	<tr>
+									        <td data-sort="Ă">Ă</td>
+									        <td>12</td>
+									        <td>423</td>
+									        <td>999</td>
+									      </tr>
+									    	<tr>
+									        <td data-sort="A">A</td>
+									        <td>12</td>
+									        <td>423</td>
+									        <td>999</td>
+									      </tr>
+									      <tr>
+									        <td data-sort="Nguyễn Văn A"><a href="">Nguyễn Văn A</a></td>
+									        <td>12</td>
+									        <td>423</td>
+									        <td>20.000</td>
+									      </tr>
+									      <tr>
+									      	<td data-sort="Bùi Thủy Tiên"><a href="#">Bùi Thủy Tiên</a></td>
+									      	<td>12</td>
+									      	<td>53</td>
+									      	<td>34.572</td>
+									      </tr>
+									      <tr>
+									        <td data-sort="Ấn"><a href="">Ấn</a></td>
+									        <td>12</td>
+									        <td>423</td>
+									        <td>999</td>
+									      </tr>
+									      <tr>
+									      	<td data-sort="Lã Tùng Anh"><a href="#">Lã Tùng Anh</a></td>
+									      	<td>356</td>
+									      	<td>234</td>
+									      	<td>56.785</td>
+									      </tr>
+									      <tr>
+									      	<td data-sort="Trịnh Thu Hà"><a href="#">Trịnh Thu Hà</a></td>
+									      	<td>124</td>
+									      	<td>54</td>
+									      	<td>43.452</td>
+									      </tr>
+									      <tr>
+									      	<td data-sort="Wi Dong Wang"><a href="#">Wi Dong Wang</a></td>
+									      	<td>345</td>
+									      	<td>2345</td>
+									      	<td>3.246</td>
+									      </tr>
+									      <tr>
+									      	<td data-sort="Ùn Kiên Trung"><a href="#">Ùn Kiên Trung</a></td>
+									      	<td>1654</td>
+									      	<td>234</td>
+									      	<td>1,725</td>
+									      </tr>
+									    </tbody>
+										</table>
+				  				</div>
+				  			</div>
+				  		</div>
+				  	</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="l-footer l-footer--page">
+			<div class="l-footer__copyright text-center">
+				Copyright 2019 Ⓒ by iSMART Education. All rights reserved.
+			</div>
+		</footer>
+	</div>
+
+	<!-- Scripts -->
+	<script data-main="assets/js/main" src="assets/js/require.js"></script>
+
+	<script>
+		requirejs.config({
+		  paths: {
+		  	'jquery':          		'libs/jquery.min',
+	      'datatables':       	'libs/datatables.min',
+	      'datatablesIntl': 		'libs/datatablesIntl'
+	    },
+    	shim:{
+	      'jquery': {
+	        exports: '$',
+	      },
+	      'datatables':{
+	      	deps: ['jquery'],
+	        exports: 'DataTable'
+	      },
+	      'datatablesIntl':{
+	      	deps: ['datatables'],
+	        exports: 'ext'
+	      },
+    	}
+		});
+
+		require(['jquery','datatables','datatablesIntl'], function($,datatables,ext) {
+			$.fn.DataTable.ext.order.intl('vi');
+			$('.js-datatable--single-class').DataTable( {
+			  "paging": false,
+			  "bLengthChange" : false,
+			  "info": false,
+			  "order": [],
+			  "ordering": true,
+			  "language": {
+			  	"decimal":        ",",
+			  	"thousands":      ".",
+			    "emptyTable":     "Không có dữ liệu",
+			    "info":           "Hiển thị từ _START_ đến _END_ trong _TOTAL_ kết quả",
+			    "infoEmpty":      "Rất tiếc, không có dữ liệu về danh sách học sinh của lớp học này",
+			    "infoFiltered":   "(_MAX_ kết quả)",
+			    "infoPostFix":    "",
+			    "thousands":      ".",
+			    "lengthMenu":     "Hiển thị _MENU_ kết quả / trang",
+			    "loadingRecords": "Đang tải...",
+			    "processing":     "Đang tải...",
+			    "search":         "Tìm kiếm:",
+			    "zeroRecords":    "Không có kết quả phù hợp",
+			    "aria": {
+			      "sortAscending":  ": activate to sort column ascending",
+			      "sortDescending": ": activate to sort column descending"
+			    }
+			  },
+			  fnInitComplete : function() {
+		      if ($(this).find('.dataTables_empty').length == 1) {
+		      	console.log($(this).parent());
+		        $(this).parent().hide();
+		        $(this).parents('.c-table-data__table').append('<div class="dataTables_custom--empty-message">Rất tiếc, không có dữ liệu về danh sách học sinh của lớp học này<div>');
+		      }
+   			} 
+			});
+		});
+	</script>
+
+</body>
+
+</html>

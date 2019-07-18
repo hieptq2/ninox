@@ -1,0 +1,690 @@
+/* ============================================================================
+   COMPONENTS -> table
+   ========================================================================= */
+
+
+.c-table{
+	margin: 32px 0;
+  th,
+  td {
+    background-color: #fff;
+    border: 3px solid material-color('grey', '300');
+  }
+  thead th {
+    background-color: material-color('grey', '100');
+    border-bottom-color: material-color('grey', '300');
+  }
+  tbody + tbody {
+    border-top-color: material-color('grey', '300');
+  }
+  &.table-bordered {
+    border-color: material-color('grey', '300');
+    th,
+    td {
+      border-color: material-color('grey', '300');
+    }
+  }
+
+  &--report-scores{
+    thead{
+      tr{
+        th{
+          border-bottom-width: 1px;
+        }
+      }
+    }
+    tbody{
+      a{
+        color: $grey900;
+        &:hover{
+          color: set-color('primary');
+        }
+      }
+      tr{
+        &.main-item{
+          td{
+            padding: 16px 12px 16px 12px;
+            
+          }
+        }
+        &.sub-item{
+          td{
+            font-size: 14px;
+            padding: 10px 12px;
+            color: $grey800;
+          }
+        }
+      }
+    }
+    @include viewport-max(lg){
+      border: 2px solid $grey300;
+      &, 
+      thead,
+      tbody,
+      tr,
+      th,
+      td{
+        display: block;
+        border: 0;
+      }
+      thead{
+        tr{
+          display: flex;
+          th{
+            flex: 0 0 25%;
+            min-width: 0;
+            font-size: 12px !important;
+            background-color: $grey100;
+            &:first-child{
+              flex: 1 1 auto;
+              min-width: 0;
+            }
+          }
+        }
+      }
+      tr{
+        td{
+          padding: 4px 6px;
+          margin: 0 ;
+        }
+        &.main-item{
+          td{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            padding: 6px !important;
+            &:first-child{
+              border-top: 1px solid $grey200;
+              padding-top: 24px !important;
+            }
+            &:last-child{
+              padding-bottom: 24px !important;
+            }
+          }
+          .lesson-collapse-toggler{
+            display: block;
+            flex: 0 0 auto;
+            min-width: 0;
+            width: 32px;
+            margin: 0 12px 0 0;
+            i{
+              display: inline-block;
+              width: 32px;
+            }
+          }
+        }
+        &.sub-item.collapsing,
+        &.sub-item.show{
+          display: flex;
+          td{
+            flex: 0 0 25%;
+            min-width: 0;
+            background-color: $grey100;
+            &:first-child{
+              flex: 1 1 auto;
+              min-width: 0;
+            }
+          }
+        }
+      }
+    }
+    .lesson-collapse-toggler{
+      @extend %button-reset;
+      @extend %no-outline;
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      text-align: center;
+      line-height: 32px;
+      color: material-color('blue', '600');
+      background-color: $grey100;
+      border-radius: 4px;
+      cursor: pointer;
+      &:hover{
+        background-color: $grey200;
+      }
+      i.fas{
+        font-size: 20px;
+        @include rotate(-90deg);
+        @include transition(transform .1s ease-in-out);
+      }
+      &.collapsed{
+        i.fas{
+          @include rotate(0);
+        }
+      }
+    }
+    .lesson-title{
+      position: relative;
+      padding-left: 8px;
+      
+    }
+    .lesson-step-title{
+      padding-left: 16px;
+    }
+  }
+
+  &--data-courses{
+    // background-color: $grey100;
+    th, td{
+      border: 0;
+      vertical-align: middle;
+      &.data-date{
+        width: 128px;
+        white-space: nowrap;
+      }
+      &.data-level{
+        width: 48px;
+        white-space: nowrap;
+      }
+      &.data-course-title{
+        min-width: 200px;
+        text-align: left;
+      }
+      &.data-course-subject{
+        min-width: 96px;
+        // white-space: nowrap;
+      }
+      &.data-action{
+        width: 1%;
+      }
+    }
+    thead{
+      tr{
+        th{
+          padding: 8px 12px;
+          font-family: $ff-pangolin;
+          font-size: 16px;
+          font-weight: 400;
+          text-align: center;
+          white-space: nowrap;
+          color: #fff;
+          background-color: $color-secondary;
+          border: 0;
+          &:first-child{
+            border-radius: $bdrd 0 0 0;
+          }
+          &:last-child{
+            border-radius: 0 $bdrd 0 0;
+          }
+          &.data-course-title{
+            text-align: center;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          padding: 16px 12px;
+          font-size: 16px;
+          text-align: center;
+          background-color: $grey50;
+          @include transition(color .2s ease-in-out);
+          
+        }
+        &:nth-child(2n){
+          td{
+            background-color: $grey100;
+          }
+        }
+        &:last-child{
+          td{
+            &:first-child{
+              border-radius: 0 0 0 $bdrd;
+            }
+            &:last-child{
+              border-radius: 0 0 $bdrd 0;
+            }
+          }
+        }
+        &:hover{
+          td{
+            background-color: material-color('orange', '50');
+          }
+        }
+      }
+    }
+    @include viewport-max(xl){
+      &, 
+      thead,
+      tbody,
+      tr,
+      th,
+      td{
+        display: block;
+      }
+      // thead{
+      //   tr{
+      //     th{
+      //       padding: 0 12px 0!important;
+      //       line-height: 28px;
+      //       width: auto !important;
+      //       border-radius: 0 !important;
+      //       text-align: left !important;
+      //     }
+      //   }
+      // }
+      thead,
+      tbody{
+        tr{
+          border-bottom: 1px solid $grey200;
+          &:first-child{
+            border-top: 1px solid $grey200;
+          }
+          td,th{
+            border: 0;
+            position: relative;
+            padding: 12px 12px 12px 64px !important;
+            width: auto !important;
+            min-width: 0;
+            text-align: left !important;
+            border-radius: 0 !important;
+            &:before{
+              content: "";
+              display: block;
+              position: absolute;
+              top: 8px; left: 8px;
+              width: 40px;
+              line-height: 32px;
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              color: $color-secondary;
+              text-align: center;
+            }
+            &.data-date:first-child:before{ content: "\f271"; }
+            &.data-date:nth-child(2):before{ content: "\f274"; }
+            &.data-course-title:before{ content: "\f518"; }
+            &.data-course-subject:before{ content: "\f303"; }
+            &.data-level{ &:before{ content: "\f5fd"; }}
+            &.data-action{
+              padding-bottom: 20px !important;
+            }
+          }
+        }
+      }   
+      thead{
+        tr{
+          th{
+            &:before{
+              color: #fff;
+            }
+            &:first-child{
+              border-radius: $bdrd $bdrd 0 0 !important;
+            }
+            &.data-action{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--portal{
+    @include viewport-max(lg){
+      &, 
+      thead,
+      tbody,
+      tr,
+      th,
+      td{
+        // display: block;
+        // box-sizing: border-box !important;
+        // width: 100% !important;
+      }
+      thead{
+        tr{
+          th{
+            padding: 8px 6px;
+            font-size: 12px;
+            &:after,
+            &:before{
+              font-size: 18px;
+              bottom: 6px !important;
+            }
+          }
+        }
+      } 
+      tbody{
+        tr{
+          td{
+            padding: 8px 6px;
+          }
+        }
+      }
+    }
+    @include viewport-min(lg){
+      thead{
+        tr{
+          th{
+            // font-size: 16px;
+            &:after,
+            &:before{
+              font-size: 20px;
+              bottom: 10px !important;
+            }
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            padding: 8px 10px;
+          }
+        }
+      }
+    }
+    thead{
+      tr{
+        th{
+          vertical-align: middle;
+          font-weight: 600;
+          text-align: center;
+          // color: #fff;
+          // background-color: lighten($color-secondary, 8%);
+          // border: 1px solid lighten($color-secondary, 5%) !important;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          vertical-align: middle;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &--portal-classes{
+    td,th{
+      vertical-align: top;
+      text-align: left;
+      // font-size: 14px;
+      // padding: 8px;
+      // @include viewport-min(sm){
+      //   font-size: 18px;
+      //   padding: 12px;
+      // }
+    }
+    a{
+      text-decoration: underline;
+    }
+    thead{
+      tr{
+        th{
+          vertical-align: top;
+          text-align: left;
+          @include viewport-max(sm){
+            padding-right: 12px !important;
+            padding-bottom: 36px;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          text-align: left;
+        }
+      }
+    }
+    .data{
+      //xx
+      &-school-title{
+        width: 42%;
+      }
+      &-class-title{
+        width: 42%;
+      }
+      &-student-count{
+        width: 16%;
+        white-space: nowrap;
+      }
+    }
+  }
+  &--portal-single-class{
+    td,th{
+      vertical-align: top;
+      @include viewport-min(sm){
+        padding: 12px;
+      }
+    }
+    a{
+      text-decoration: underline;
+    }
+    thead{
+      th{
+        vertical-align: top;
+        @include viewport-max(sm){
+          padding-right: 12px !important;
+          padding-bottom: 32px !important;
+        }
+        @include viewport-min(sm){
+          // font-size: 14px;
+        }
+      }
+    }
+  }
+  &--student-topics{
+    @include viewport-max(lg){
+      max-width: 100% !important;
+      &, 
+      thead,
+      tbody,
+      tr,
+      th,
+      td{
+        display: block;
+        box-sizing: border-box !important;
+        width: 100% !important;
+      }
+      thead{
+        th{
+          padding: 8px;
+          font-size: 12px;
+          text-align: left !important;
+          &:after,
+          &:before{
+            font-size: 18px;
+            bottom: 6px !important;
+          }
+          &.data{
+            &-action{
+              display: none;
+            }
+          }
+        }
+      }
+      tbody{
+        padding: 6px;
+        tr{
+          padding: 6px;
+          td{
+            border-bottom: 0 !important;
+            &:last-child{
+              border-bottom: 1px solid $grey200 !important;
+            }
+          }
+        }
+      }
+    }
+    @include viewport-min(lg){
+      th,td{
+        &.data{
+          &-topic{
+            width: auto;
+          }
+          &-subject{
+            width: 180px;
+          }
+          &-progress{
+            width: 200px;
+          }
+          &-date{
+            width: 200px;
+          }
+          &-action{
+            width: 140px;
+          }
+        }
+      }
+      th{
+        font-size: 16px;
+      }
+      td{
+        &.data{
+          &-topic{
+            text-align: left;
+          }
+        }
+      }
+    }
+    @include viewport-min(xl){
+      th,td{
+        &.data{
+          &-topic{
+            width: auto;
+          }
+        }
+      }
+    }
+    thead{
+      tr{
+        th{
+          //
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          //
+        }
+        &:nth-child(2n+1){
+          td{
+            background-color: $grey50;
+          }
+        }
+      }
+    }
+
+    .data{
+      //xx
+      &-topic{
+        //
+      }
+      &-subject{
+        //
+      }
+      &-progress{
+        &__progress{
+          position: relative;
+          width: 200px;
+          height: 24px;
+          box-shadow: 0 0 0 2px $grey300;
+          margin: 0 auto;
+          .progress{
+            //xx
+            &-bar{
+              background-color: #fcb73e;
+              .progress-bar-striped {
+                background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.25) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 75%, transparent 75%, transparent);
+                background-size: 1rem 1rem;
+              }
+              span{
+                display: block; 
+                position: absolute;
+                top: 50%; margin-top: -12px;
+                left: 50%; @include translateX(-50%);
+                color: $grey600;
+                line-height: 24px;
+                font-weight: 700;
+                padding: 0 6px;
+                border-radius: 10px;
+              }
+            }
+          }
+        }
+      }
+      &-date{
+        //
+      }
+      &-action{
+        padding: 4px;
+        &__single{
+          display: inline-block;
+          vertical-align: top;
+          margin: 4px;
+          white-space: nowrap;
+          text-align: center;
+          padding: 2px 6px;
+          line-height: 20px;
+          font-size: 12px;
+          font-weight: 600;
+          border: 2px solid $grey200;
+          border-radius: 8px;
+          &:hover{
+            background-color: $grey50;
+          }
+          @include viewport-min(lg){
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.table{
+  &--completed-answers{
+    border-spacing: 1px;
+    th,td{
+      border: 1px solid #e0e0e0;
+    }
+    td{
+      &:nth-child(1){ text-align: left; }
+      &:nth-child(2){ text-align: center; }
+      &:nth-child(3){ text-align: left; }
+    }
+    @include viewport-max(xl){
+      &, 
+      thead,
+      tbody,
+      tr,
+      th,
+      td{
+        display: block;
+      }
+      thead{
+        display: none;
+      }
+      tbody{
+        tr{
+          td{
+            border: 0;
+            position: relative;
+            text-align: left;
+            padding: 8px 8px 8px 36px !important;
+            &:before{
+              content: "";
+              position: absolute;
+              display: block;
+              top: 8px;
+              left: 0;
+              font-family: "Font Awesome 5 Free";
+              font-size: 18px;
+              font-weight: 900;
+              color: $grey400;
+            }
+            &:nth-child(1){ &:before{ content: "\f059"; } }
+            &:nth-child(2){ &:before{ content: "\f03e"; } }
+            &:nth-child(3){ &:before{ content: "\f303"; } }
+          }
+          border-bottom: 2px solid $grey200;
+        }
+      }
+    }
+  }
+}
+

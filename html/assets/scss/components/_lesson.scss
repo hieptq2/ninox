@@ -1,0 +1,863 @@
+.c-lesson{
+	.c-card{
+		&__header{
+			margin: -24px -24px 0;
+			// padding: 24px;
+			background-color: $grey50;
+			border-bottom: 2px solid $grey100;
+			border-radius: $bdrd $bdrd 0 0;
+		}
+		&__icon{
+			width: 80px;
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+		&__title{
+			margin: 0;
+			@extend .h-title-1--sm;
+			color: $color-primary;
+			
+		}
+	}
+	.lesson-wrapper{
+		width: 100%;
+		margin: 0 auto;
+		@include viewport-min(xl){
+			width: 750px;
+		}
+		@include viewport-min(xxl){
+			width: 960px;
+		}
+	}
+	.lesson-header{
+		padding: 24px;
+		margin: 0 -24px 24px;
+		border-bottom: 1px solid $grey200;
+		@include viewport-min(md){
+			margin-bottom: 48px;
+		}
+		&__title{
+			position: relative;
+			padding: 0 0 0 24px;
+			margin: 0 0 0 -16px;
+			font-family: $ff-lobster;
+			font-size: 26px;
+			font-weight: 600;
+			color: $grey800;
+			&:before{
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 8px;
+				@include triangle(right, 16px, 16px, $color-primary);
+			}
+			@include viewport-min(sm){
+				padding: 0 0 0 40px;
+				margin: 0;
+				font-size: 32px;
+				&:before{
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 8px;
+					@include triangle(right, 24px, 24px, $color-primary);
+				}
+			}
+		}
+	}
+	.milestone{
+		&-info{
+			height: 32px;
+			line-height: 20px;
+			padding: 8px 0 0;
+			font-size: 14px;
+			font-family: $ff-pangolin;
+			font-weight: 600;
+			color: $grey500;
+		}
+		&-icon{
+			width: 24px;
+			height: 24px;
+			margin: 4px auto;
+			background-color: #fff;
+			&--not-required{
+				background-color: #fff;
+				border: 2px solid $grey700;
+				box-shadow: 0 1px 3px rgba(#000, .12);
+			}
+			&--required{
+				background-color: #fff;
+				border: 2px solid $grey700;
+				border-radius: 50%;
+			}
+			&--unopened{
+				background-color: #ccc;
+				border-color: #ccc;
+			}
+			&--completed{
+				background-color: set-color('primary');
+				border-color: set-color('primary')
+			}
+			&--color{
+				margin: 12px auto;
+				width: 16px;
+				height: 16px;
+		    border-radius: 0 8px 8px 8px;
+		    @include rotate(45deg);
+				box-shadow: 0 0 0 2px rgba(#000, .12);
+			}
+		}
+		&-label{
+			height: 32px;
+			padding: 8px 8px 0;
+			line-height: 24px;
+			font-size: 16px;
+			font-weight: 600;
+			color: $grey700;
+			@include one-line-ellipsis();
+		}
+		&-note{
+			margin: 12px 0 0;
+			font-size: 14px;
+			font-style: italic;
+		}
+		&-finish{
+			img{
+				display: block;	
+				margin: 8px auto;
+				width: 80px;
+				height: 80px;
+				@include rotate(-15deg);
+			}
+		}
+	}
+	.cy-milestone{
+		text-align: center;
+		.milestone{
+			&-info{
+				height: 20px;
+				padding-bottom: 24px;
+				margin: 0 0 32px;
+			}
+			&-label{
+				height: 24px;
+				padding: 0;
+				margin: 56px 0 0;
+				font-size: 14px;
+				@include one-line-ellipsis(auto, 180px);
+			}
+		}
+	}
+	.lesson-tag{
+		display: inline-block;
+		vertical-align: baseline;
+		padding: 8px 16px;
+		line-height: 24px;
+		font-size: 18px;
+		font-weight: 600;
+		color: $grey700;
+		background-color: $grey300;
+		border: 3px solid #fff;
+		// box-shadow: 0 0 0 3px $grey300;
+		border-radius: 24px;
+	}
+	.lesson-finish-message{
+		padding: 16px;
+		text-align: center;
+		background-color: material-color('green', '50');
+		border-radius: 24px;
+		@include viewport-min(md){
+			padding: 24px;
+		}
+		.message{
+			&-icon{
+				margin: 0 0 8px;
+				img{
+					display: inline-block;
+					vertical-align: top;
+					width: 48px;
+					height: 48px;
+					@include rotate(15deg);
+					@include viewport-min(md){
+						width: 80px;
+						height: 80px;
+					}
+				}
+			}
+			&-content{
+				font-size: 14px;
+				color: material-color('green', '600');
+				@include viewport-min(md){
+					font-size: 18px;
+				}
+				br{
+					display: none;
+					@include viewport-min(md){
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	.lesson-timeline{
+		margin: 32px 0 0;
+		padding: 48px 48px;
+		border: 4px solid $grey200;
+		border-radius: 24px;
+		@include transition(
+			top .2s ease-in-out,
+			padding .2s ease-in-out
+		);
+		.c-slick{
+			&__nav{
+				@extend %button-reset;
+				@extend %no-outline;
+				display: block;
+				position: absolute;
+				top: 50%; margin-top: -24px;
+				width: 48px;
+				height: 48px;
+				line-height: 48px;
+				font-size: 40px;
+				text-align: center;
+				color: $grey300;
+				background-color: #fff;
+				cursor: pointer;
+				@include transition(color .2s ease-in-out);
+				&:before{
+					display: none;
+				}
+				&:hover{
+					color: set-color('primary', 'lighter');
+				}
+				&:active{
+					color: set-color('primary');
+				}
+				&.slick-prev{
+					left: -32px;
+				}
+				&.slick-next{
+					right: -32px;
+				}
+				&.slick-disabled{
+					color: $grey200;
+					pointer-events: none;
+					&:hover,
+					&:active{
+						color: $grey200;
+					}
+				}
+			}
+			.slick-slide{
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+		.lesson-timeline--slick{
+			position: relative;
+			// &:before{
+			// 	content: "";
+			// 	display: block;
+			// 	position: absolute;
+			// 	top: 50%; left: 24px; right: 24px;
+			// 	margin-top: -1px;
+			// 	height: 2px;
+			// 	background-color: material-color('blue', '200');
+			// }
+		}
+		.single-milestone{
+			position: relative;
+			display: block;
+			text-align: center;
+			cursor: pointer;
+			&:before{
+				content: "";
+				display: block;
+				position: absolute;
+				top: 50%; left: 0; right: 50%;
+				margin-top: -1px;
+				height: 2px;
+				background-color: material-color('blue', '200');
+				z-index: 50;
+			}
+			&:first-child{
+				&:before{
+					display: none;
+				}
+			}
+			&:after{
+				content: "";
+				display: block;
+				position: absolute;
+				top: 50%; left: 50%; right: 0;
+				margin-top: -1px;
+				height: 2px;
+				background-color: material-color('blue', '200');
+				z-index: 50;
+			}
+			&:last-child{
+				&:after{
+					display: none;
+				}
+			}
+			& > div{
+				position: relative;
+				z-index: 	60;
+			}
+		}
+		&-fixtop{
+			&.sidebar-in-affected{
+				@include transition(none);
+				&.is-activated{
+					// margin: 0 !important;
+					@include viewport-min(md){
+						// padding-left: 320px;
+					}
+					
+					// @include transition(padding .5s ease-in-out);
+				}
+			}
+			&.is-activated{
+				@extend .h-shadow-2;
+				@include viewport-min(lg){
+					position: fixed;
+					top: 64px; left: 0; right: 0;
+					z-index: 950;
+					background-color: #fff;
+					
+					.lesson-timeline{
+						max-width: 750px;
+						padding: 0 48px 8px;
+						margin: 0 auto;
+						border-color: transparent;
+						border-radius: 0;
+						@include viewport-min(xxl){
+							max-width: 960px;
+						}
+					}
+					& + .lesson-timeline-fixtop--space{
+						height: 232px;
+					}
+				}
+					
+			}
+		}
+	}
+	.lesson-timeline-note{
+		margin: 24px 0;
+		padding: 12px 24px;
+		background-color: $grey50;
+		border-radius: $bdrd;
+		.single-milestone-note{
+			padding: 16px 8px;
+			text-align: center;
+			color: $grey600;
+		}
+		@include viewport-min(lg){
+			padding: 12px 48px;
+		}
+	}
+	.lesson-detail{
+		margin: 24px 0;
+		border: 4px solid $grey200;
+		border-radius: 24px;
+		.single-prv-step{
+			border-bottom: 2px solid $grey200;
+			&:last-child{
+				border-bottom: 0;
+			}
+			.prv-step-header{
+					
+				padding: 8px 48px 8px 24px;
+				cursor: pointer;
+				position: relative;
+				@include display-flex();
+				@include align-items(center);
+				@include flex-wrap(wrap);
+				@include viewport-min(xl){
+					@include flex-wrap(nowrap);
+				}
+				&__status{
+					@include flex(0 0 auto);
+					min-width: 0;
+					margin: 0 12px 0 0;
+				}
+				&__icon{
+					@include flex(0 0 auto);
+					min-width: 0;
+					width: 96px;
+					text-align: left;
+					img{
+						display: inline-block;
+						vertical-align: top;
+						height: 48px;
+					}
+					@include viewport-min(xl){
+						text-align: center;
+						flex: 0 0 auto;
+					}
+					// @include viewport-max(sm){
+					// 	display: inline-block;
+					// 	vertical-align: middle;
+					// }
+				}
+				&__title{
+					flex: 0 0 100%;
+					min-width: 0;
+					padding: 0;
+					margin: 10px 0 10px 24px;
+					line-height: 1.375;
+					font-size: 18px;
+					font-weight: 600;
+					order: 4;
+					@include viewport-min(xl){
+						@include flex(1 1 auto);
+						padding: 20px 0;
+						margin: 0 0 0 24px;
+						font-size: 20px;
+						order: 3;
+					}
+					@include viewport-min(xxl){
+						font-size: 22px;
+					}
+				}
+				&__action{
+					
+					padding: 8px 0;
+					margin: 0 0 0 24px;
+					order: 3;
+					@include viewport-min(xl){
+						padding: 15px 0;
+						margin: 0 24px 0 48px;
+						order: 4;
+					}
+					.action-label{
+						font-size: 12px;
+						font-weight: 600;
+						color: $grey700;
+					}
+					.action-button{
+						
+						margin: 2px;
+						.c-button{
+							font-weight: 600;
+						}
+					}
+				}
+				&__icon-collapse{
+					position: absolute;
+					top: 32px; right: 24px;
+					min-width: auto;
+					margin: 0 0 0 32px;
+					z-index: 200;
+
+					@include viewport-min(xl){
+						top: 50%;
+						margin-top: -16px;
+					}
+					.icon-collapse{
+						display: block;
+						line-height: 32px;
+						font-size: 24px;
+						color: $grey600;
+						@include transition(transform .2s ease-in-out);
+					}
+				}
+				&.collapsed{
+					.prv-step-header__icon-collapse{
+						i.icon-collapse{
+							@include rotate(180deg);
+						}
+					}
+				}
+			}
+			.prv-step-content{
+				margin: 0 24px;
+				padding: 24px 0;
+				border-top: 1px solid $grey200;
+				font-size: 16px;
+				word-break: break-word;
+				@include viewport-min(md){
+					font-size: 18px;
+				}
+			}
+		}
+	}
+
+	.lesson-navbar{
+		@include display-flex();
+		@include justify-content(center);
+		list-style: none;
+		margin: 0;
+		padding: 24px 0;
+		border-top: 2px solid $grey100;
+		border-bottom: 2px solid $grey100;
+		@include viewport-max(xl){
+			@include flex-wrap(wrap);
+		}
+
+		&__item{
+			@include flex(0 0 50%);
+			padding: 24px 0 8px;
+			border-radius: 24px;
+			@include viewport-min(md){
+				@include flex(0 0 33.33%);
+			}
+			@include viewport-min(xl){
+				@include flex(1 1 auto);
+			}
+			.item{
+				&-icon{
+					display: block;
+					margin: 0 auto;
+					width: 64px;
+					height: 64px;
+					opacity: .5;
+					filter: grayscale(100%);
+					border-radius: 24px;
+					@include transition(opacity .2s ease-in-out,
+															filter .2s ease-in-out,
+															transform .2s ease-in-out);
+				}
+				&-label{
+					display: block;
+					position: relative;
+					padding: 16px 0 ;
+					font-size: 18px;
+					font-weight: 600;
+					color: $grey400;
+					@include transition(padding .1s ease-in-out, color .2s ease-in-out);
+				}
+				&-link{
+					display: block;
+					text-align: center;
+				}
+
+			}
+			&:not(.is-actived):not(.disabled):hover{
+				.item{
+					&-icon{
+						opacity: 1;
+						filter: grayscale(0);
+						@include scale(1.25);
+					}
+					&-label{
+						top: 8px;
+						padding: 24px 0 8px;
+						color: $grey600;
+					}
+				}
+			}
+			&.is-actived{
+				background-color: $grey100;
+				.item{
+					&-icon{
+						opacity: 1;
+						filter: grayscale(0);
+					}
+					&-label{
+						color: set-color('primary');
+					}
+				}
+			}
+			&.disabled{
+				pointer-events: normal;
+				cursor: not-allowed;
+				opacity: .6;
+			}
+		}
+		
+	}
+	.lesson-detail{
+		&__content{
+			margin: 48px auto;
+			max-width: 1020px;
+		}
+		&__intro-banner{
+			margin: 0;
+			position: relative;
+			border-radius: $bdrd $bdrd 0 0;
+			overflow: hidden;
+			img{
+				display: block;
+				min-height: 200px;
+				width: 100%;
+				object-fit: cover;
+				@include viewport-min(md){
+					min-height: 300px;
+				}
+			}
+			& + .lesson-detail__intro-tilte{
+				margin-top: 24px;
+			}
+		}
+		&__intro-title{
+			// position: absolute;
+			// bottom: 0; left: 0; right: 0;
+			margin: 0 0 24px 0;
+			padding: 0 24px 0 0;
+			// line-height: 40px;
+			// font-family: $ff-lobster;
+			// font-size: 32px;
+			// font-weight: 700;
+			// color: $grey800;
+			// // color: #fff;
+			// // background-color: rgba(#000,.5);
+			// // text-shadow: 4px 3px 0 $grey200;
+			// // @include multi-line-ellipsis(40px, 2);
+			// // max-height: none;
+			@extend .h-title-1--sm;
+			color: $color-primary;
+		}
+		&__intro-main{
+			margin: 24px 0;
+		}
+	}
+
+	[class^="col"]{
+		& > .lesson-detail__intro-title{
+			margin-top: 24px;
+		}
+	}
+
+	.lesson-alert{
+		position: fixed;
+		top: 80px;
+		right: 0;
+		z-index: 1010;
+	}
+
+	.lesson-roadmap{
+		border: 2px solid $grey300;
+		border-radius: $bdrd;
+	}
+}
+
+.tooltip{
+	.tooltip-inner{
+		max-width: none;
+		white-space: nowrap;
+	}
+}
+
+
+.lesson-crcl{
+		
+	&__menu{
+		padding: 12px;
+		overflow: auto;
+		border: 2px solid #e0e0e0;
+		height: 480px;
+		border-radius: 8px;
+		@include scrollbar(8px, $grey400);
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			li{
+				a{
+					color: $grey900;
+					font-weight: 600;
+					
+				}
+			}
+		}
+		.list-crcl-menu{
+			li{
+				
+				a{
+					display: block;
+					@include display-flex();
+					align-items: center;
+					border-radius: 8px;
+					padding: 4px 12px;
+					@include viewport-min(xl){
+						padding: 8px 16px;
+					}
+					.item{
+						&__toggle-icon{
+							@include flex(0 0 auto);
+							min-width: 0;
+							margin: 0 12px 0 0;
+							i.fas{
+								&:after{
+									content: "";
+									display: block;
+
+								}
+							}
+						}
+						&__label{
+							@include flex(1 1 auto);
+							font-size: 16px;
+							@include viewport-min(xl){
+								font-size: 18px;
+							}
+						}
+						&__status{
+							@include flex(0 0 auto);
+							margin: 0 0 0 8px;
+						}
+					}
+					&:hover{
+						background-color: $grey100;
+					}
+				}
+				&.active{
+					& > a{
+						color: $color-primary;
+						background-color: $grey200;
+					}
+				}
+			}
+			& > li{
+				margin-bottom: 8px;
+				padding-bottom: 8px;
+				border-bottom: 1px solid $grey300;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				&:last-child{
+					border-bottom: 0;
+				}
+				& > a{
+					padding: 4px 12px;
+					line-height: 22px;
+					@include viewport-min(xl){
+						padding: 8px 16px;
+					}
+					font-size: 18px;
+					i.fas{
+						@include rotate(180deg);
+						@include transition(transform .2s ease-in-out);
+					}
+					& + ul{
+						background-color: #fff;
+					}
+					&.collapsed{
+						i.fas{
+							@include rotate(0deg);
+						}
+						& + ul{
+							background-color: $grey50;
+						}
+					}
+				}
+				&.is-actived{
+					& > a{
+						color: set-color('primary');
+					}
+				}
+			}
+			ul{
+				margin: 0 0 0 32px;
+				li{
+					a{
+						color: $grey800;
+					}
+				}
+			}
+		}
+	}
+	&__content{
+		height: 480px;
+		padding: 16px 24px;
+		border: 2px solid #e0e0e0;
+		border-radius: 8px;
+		overflow: auto;
+		@include scrollbar(8px, $grey400);
+		.content-title{
+			font-family: $ff-lobster;
+			font-size: 36px;
+			font-weight: 700;
+		}
+	}
+	&__included{
+		margin: 16px 0 0;
+		.single-included-item{
+			@include display-flex();
+			@include align-items(center);
+			@include justify-content(center);
+			padding: 8px 40px 8px 0;
+			@include viewport-min(sm){
+				@include justify-content(flex-start);
+			}
+			.item-icon{
+				@include flex(0 0 auto);
+				img{
+					display: block;
+					height: 48px;
+				}
+			}
+			.item-data{
+				margin: 0 0 0 12px;
+				@include flex(0 1 auto);
+				font-size: 24px;
+				font-weight: 600;
+				color: $grey700;
+			}
+		}
+	}
+}
+
+.lesson-detail{
+	&__intro-descr{
+		padding: 16px;
+		font-size: 16px;
+		border: 2px solid $grey100;
+		border-radius: 4px;
+		@include viewport-min(md){
+			font-size: 18px;
+		}
+		.intro-title{
+			font-size: 24px;
+			font-weight: 700;
+			color: $color-primary;
+			@include viewport-min(md){
+				font-size: 36px;
+			}
+		}
+	}
+	&__intro-specs{
+		@include viewport-max(xl){
+			margin-top: 16px;
+		}
+		.intro-specs{
+			//xx
+			&__row{
+				@include viewport-min(sm){
+					@include display-flex();
+					@include align-items(center);
+				}
+				margin: 0 0 4px;
+				padding: 8px 12px;
+				background-color: $grey100;
+				border-radius: 4px;
+			}
+			&__label{
+				min-width: 0;
+				font-size: 14px;
+				color: $grey600;
+				@include one-line-ellipsis();
+				@include viewport-min(sm){
+					@include flex(1 1 auto);
+				}
+			}
+			&__data{
+				
+				min-width: 0;
+				font-size: 18px;
+				font-weight: 600;
+				color: $grey900;
+				@include one-line-ellipsis();
+				@include viewport-min(sm){
+					@include flex(0 0 50%);
+					text-align: right;
+				}
+			}
+		}
+	}
+}

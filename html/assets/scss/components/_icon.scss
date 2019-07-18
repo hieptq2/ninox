@@ -1,0 +1,90 @@
+/* ============================================================================
+   COMPONENTS -> icon
+   ========================================================================= */
+
+
+.c-icon{
+	display: inline-block;
+	vertical-align: baseline;
+	position: relative;
+	width: 48px;
+	height: 48px;
+	padding: 8px;
+	border: 2px solid #fff;
+	background-image: linear-gradient(to bottom, material-color('grey', '200'), material-color('grey', '50'));
+	box-shadow: 0 1px 0 3px material-color('grey', '300');
+	border-radius: 12px;
+	&:before{
+		content: "";
+		display: block;
+		position: absolute;
+		z-index: 200;
+		width: 60%;
+		top: 0; bottom: 0; left: 0;
+		border-radius: 8px 90% 0 8px;
+		background-color: rgba(#fff,.5);
+	}
+	img{
+		display: block;
+		position: relative;
+		// max-width: none;
+		// max-height: none;
+	}
+	&--lg{
+		width: 64px; 
+		height: 64px;
+		padding: 8px;
+		border-width: 2px;
+		border-radius: 8px;
+	}
+	&--xl{
+		width: 80px; 
+		height: 80px;
+		padding: 12px;
+		border-width: 3px;
+		border-radius: 10px;
+	}
+	&--xxl{
+		width: 96px; 
+		height: 96px;
+		padding: 16px;
+		border-width: 4px;
+		border-radius: 12px;
+	}
+	&--xxxl{
+		width: 128px; 
+		height: 128px;
+		padding: 16px;
+		border-width: 4px;
+		border-radius: 16px;
+		box-shadow: 0 1px 0 2px inherit;
+	}
+}
+.c-gem-icon{
+	position: relative;
+	&__image{
+		width: 48px;
+		height: 48px;
+		background-image: url('../img/icons/gem.png');
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+	&__count{
+		display: block;
+		padding: 0 6px 0;
+		line-height: 20px;
+		font-family: $ff-cheri;
+		font-size: 14px;
+		font-weight: 700;
+		position: absolute;
+		top: 50%; left: 50%;
+		margin-top: 2px;
+		@include translateX(-50%);
+		white-space: nowrap;
+		letter-spacing: .4px;
+		color: #fff;
+		background-color: set-color('secondary');
+		box-shadow: 0 2px 0 0 #ccc;
+		border-radius: 12px;
+	}
+}

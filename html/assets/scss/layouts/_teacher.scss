@@ -1,0 +1,355 @@
+.l-teacher-cmt{
+	.l-section{
+		//xx
+		&__title{
+			color: $color-primary;
+		}
+		&__body{
+			border: 2px solid $grey200;
+			border-radius: $bdrd;
+		}
+	}
+	&__calendar{
+		//
+	}
+	&__content{
+		min-height: 120px;
+		padding: 12px;
+		@include viewport-min(sm){
+			padding: 24px;
+		}
+	}
+	&__sidebar{
+		height: 100%;
+		padding: 8px;
+		border: 2px solid $grey200;
+		border-radius: $bdrd;
+		@include viewport-min(sm){
+			padding: 16px;
+		}
+		.c-filter-toggler{
+			margin: 0;
+			& + .collapse-wrap{
+				.tch-cmts{
+					// padding: 16px 12px 0;
+				}
+			}
+		}
+	}
+	&__tch-cmts{
+		height: 100%;
+		padding: 16px;
+		border: 2px solid $grey200;
+		border-radius: $bdrd;
+	}
+	.tch-cmts{
+		//xx
+		&__head{
+			margin: 0 0 16px;
+			padding: 0 0 12px;
+			border-bottom: 1px solid $grey200;
+		}
+		&__time{
+			margin: 0;
+			font-size: 18px;
+			font-weight: 700;
+			color: $color-secondary;
+			@include viewport-min(sm){
+				font-size: 22px;
+			}
+			@include viewport-min(xl){
+				font-size: 28px;
+			}
+		}
+		
+		&__list-lsns{
+			margin: 0 -16px;
+			.single-lsn{
+				display: block;
+				// margin: 0 -12px;
+				padding: 0 16px;
+				border-radius: $bdrd;
+				&__wrap{
+					padding: 16px;
+					border-bottom: 1px solid $grey200;
+					@include transition(background-color .2s ease-in-out);
+					border-radius: 16px;
+				}
+				&.active{
+					.single-lsn{
+						//xx
+						&__wrap{
+							background-color: material-color('orange', '50');
+						}
+					}
+				}
+				&:first-child{
+					// padding-top: 0;
+				}
+				&:last-child{
+					.single-lsn{
+						&__wrap{
+							border-bottom: 0;
+						}
+					}
+					
+				}
+				&__head{
+					//
+				}
+				&__body{
+					margin: 8px 0 0;
+				}
+				&__title{
+					margin: 0;
+					font-family: $ff-lobster;
+					font-size: 24px;
+					color: $color-secondary;
+				}
+				&__info{
+					//
+				}
+				&__single-info{
+					@include display-flex();
+					@include align-items(center);
+					padding: 2px 0;
+					font-size: 16px;
+					.info{
+						//xx
+						&-icon{
+							@include flex(0 0 auto);
+							margin: 0 12px 0 0;
+							color: $grey400;
+						}
+						&-data{
+							@include flex(1 1 auto);
+							color: $grey700;
+						}
+					}
+				}
+			}
+		}
+		&__list-cmts{
+			.single-cmt{
+				margin: 12px 0;
+				// padding: 8px 0;
+				@include viewport-min(sm){
+					margin: 24px;
+				}
+				&__head{
+					display: flex;
+					align-items: center;
+					padding: 0 20px;
+				}
+				&__content{
+					margin: 0 0 0;
+				}
+				&__icon{
+					flex: 0 0 auto;
+					min-width: 0;
+					margin: 0 16px 0 0;
+					font-size: 24px;
+					color: $grey600;
+					@include viewport-min(sm){
+						font-size: 32px;
+					}
+				}
+				&__title{
+					font-family: $ff-pangolin;
+					font-size: 18px;
+					color: $grey600;
+					@include viewport-min(sm){
+						font-size: 24px;
+					}
+				}
+				&__quote{
+					position: relative;
+					padding: 40px 24px 32px;
+					line-height: 1.6125;
+					font-family: $ff-mrw;
+					font-weight: 400;
+					font-size: 16px;
+					background-color: $grey100;					
+					border-radius: 48px 0 48px 0;
+					@include viewport-min(sm){
+						padding: 32px 64px 32px 80px;
+						font-size: 20px;
+					}
+					.icon-left,
+					.icon-right{
+						position: absolute;
+						font-size: 18px;
+						color: $color-secondary;
+						opacity: .4;
+						@include viewport-min(sm){
+							font-size: 24px;
+						}
+					}
+					.icon-left{
+						top: 12px; 
+						left: 36px;
+						@include viewport-min(sm){
+							top: 28px; 
+							left: 28px;
+						}
+					}
+					.icon-right{
+						bottom: 12px;
+						right: 36px;
+						@include viewport-min(sm){
+							bottom: 28px;
+							right: 28px;
+						}
+					}
+					p{
+						&:last-child{
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.c-nav-calendar{
+	&__week{
+		.week-nav{
+			@include display-flex();
+			@include align-items(center);
+			height: 56px;
+			&__control{
+				@include flex(0 0 auto);
+				min-width: 0;
+				display: block;
+				line-height: 48px;
+				font-size: 20px;
+				width: 40px;
+				text-align: center;
+				color: $grey400;
+				@include viewport-min(sm){
+					width: 56px;
+					font-size: 24px;
+				}
+				&:hover{
+					color: $color-primary;
+				}
+			}
+			&__current{
+				@include flex(1 1 auto);
+				min-width: 0;
+				text-align: center;
+			}
+			&__title,
+			&__input-title{
+				line-height: 1,25;
+				font-size: 16px;
+				font-weight: 700;
+				@include viewport-min(lg){
+					font-size: 24px;
+				}
+			}
+			&__input-title{
+				border: 0;
+				display: block;
+				width: 100%;
+				text-align: center;
+				@extend %no-outline;
+
+			}
+		}
+	}
+	&__days{
+		border-top: 1px solid $grey300;
+		.single-week{
+			@include display-flex();
+			@include flex-wrap(wrap);
+			margin: 0 -1px 0 0;
+			@include viewport-min(lg){
+				@include flex-wrap(nowrap);
+			}
+		}
+		.line-divider{
+			flex: 0 0 100%;
+			@include viewport-min(lg){
+				display: none;
+			}
+		}
+		.single-day{
+			$s: &;
+			position: relative;
+			display: block;
+			@include flex(1 0);
+			padding: 4px 8px 12px;
+			border-right: 1px solid $grey300;
+			border-bottom: 1px solid $grey300;
+			background-color: $grey100;
+			@include viewport-min(lg){
+				padding: 4px 8px;
+			}
+			&__th{
+				font-family: $ff-pangolin;
+				min-width: 1px;
+				height: 18px;
+				line-height: 18px;
+				font-size: 14px;
+				color: $grey500;
+			}
+			&__ng{
+				position: relative;
+				margin: 0 auto;
+				line-height: 24px;
+				font-size: 18px;
+				font-weight: 600;
+				text-align: center;
+				color: $grey900;
+				height: 36px;
+				width: 36px;
+				text-align: center;
+				@include viewport-min(lg){
+					// top: -10px;
+				}
+				&:before{
+					content: "";
+					display: block;
+					position: absolute;
+					top: -6px; left: 0;
+					width: 36px;
+					height: 36px;
+					background-color: transparent;
+					border-radius: 50%;
+					border: 2px solid transparent;
+				}
+			}
+			&.is-today{
+				// &:before{
+				// 	content: "";
+				// 	display: block;
+				// 	position: absolute;
+				// 	bottom: 8px;
+				// 	left: 12px;
+				// 	width: 8px;
+				// 	height: 8px;
+				// 	background-color: $color-secondary;
+				// 	border-radius: 50%;
+				// }
+			}
+			&.is-active{
+				.single-day{
+					//xx
+					&__ng{
+						&:before{
+							border-color: $color-primary;
+						}
+					}
+				}
+			}
+			&.is-selected{
+				background-color: #fff;
+				border-bottom-color: #fff;
+				.single-day{
+
+				}
+			}
+		}
+	}
+}

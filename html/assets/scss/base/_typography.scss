@@ -1,0 +1,168 @@
+/* ============================================================================
+   BASE -> typography
+   ========================================================================= */
+
+// base
+
+// body{
+// 	line-height: $g-line-height;
+// 	font-family: set-font('family');
+// 	font-size: set-font('size');
+// 	font-weight: set-font('weight');
+// }
+
+body{
+	line-height: 1.5;
+	font-family: $ff-montserrat;
+	font-size: 18px;
+	font-weight: 500;
+	color: material-color('grey', '900');
+}
+
+h1{
+	margin-bottom: 32px;
+	line-height: 1.125;
+	font-size: 56px;
+}
+h2{
+	margin-bottom: 28px;
+	line-height: 1.125;
+	font-size: 48px;
+}
+h3{
+	margin-bottom: 28px;
+	line-height: 1.25;
+	font-size: 40px;
+}
+h4{
+	margin-bottom: 24px;
+	line-height: 1.25;
+	font-size: 32px;
+}
+h5{
+	margin-bottom: 20px;
+	line-height: 1.5;
+	font-size: 24px;
+}
+h6{
+	margin-bottom: 16px;
+	line-height: 1.5;
+	font-size: 20px;
+}
+p{
+	margin-bottom: 16px;
+}
+hr{
+	margin: 32px 0;
+	border-top: 2px solid rgba(#000,.08);
+}
+.h-title-1{
+	margin: 0 0 32px;
+	line-height: 1.125;
+	font-family: $ff-baloo;
+	font-size: 32px;
+	color: material-color('grey', '900');
+	// color: #fff;
+  text-shadow: 3px 4px 0 material-color('grey', '300');
+  @include viewport-min(sm){
+  	font-size: 36px;
+  }
+  @include viewport-min(md){
+  	font-size: 40px;
+  }
+  @include viewport-min(lg){
+  	font-size: 48px;
+  }
+  @include viewport-min(xl){
+  	font-size: 56px;
+  }
+  &.on-dark-background{
+  	color: #fff;
+  	text-shadow: 4px 4px 0 material-color('grey', '700');
+  }
+  &--sm{
+  	font-family: $ff-baloo;
+		font-size: 32px;
+		text-shadow: 3px 3px 0 material-color('grey', '300');
+		@include viewport-min(sm){
+			font-size: 44px;
+		}
+  }
+  &--xs{
+  	font-family: $ff-baloo;
+		font-size: 24px;
+		text-shadow: 2px 2px 0 material-color('grey', '200');
+		@include viewport-min(sm){
+			font-size: 32px;
+		}
+  }
+  &--xxs{
+  	font-family: $ff-baloo;
+		font-size: 20px;
+		text-shadow: 2px 2px 0 material-color('grey', '200');
+		@include viewport-min(sm){
+			font-size: 28px;
+		}
+  }
+}
+.h-title-2{
+	margin: 0 0 24px;
+	line-height: 1.125;
+	font-family: $ff-lobster;
+	font-size: 44px;
+	color: #111;
+}
+.h-text{
+	line-height: 1.5;
+	font-family: $ff-montserrat;
+	font-size: 18px;
+	font-weight: 500;
+}
+.h-text-alt{
+	line-height: 1.5;
+	font-family: $ff-pangolin;
+	font-size: 18px;
+	font-weight: 400;
+	color: material-color('grey', '700');
+}
+
+// font-family
+.h-ff-cheri{
+	font-family: $ff-cheri !important;
+}
+
+// font-size
+@for $i from 8 to 56{
+	.h-fz-#{$i}{
+		font-size: $i + px !important;
+	}
+}
+
+// font-weight
+@for $i from 3 to 8{
+	$fw: $i * 100;
+	.h-ff-#{$fw}{
+		font-weight: $fw !important;
+	}
+}
+
+
+a{
+	color: map-get($g-link, 'color');
+	text-decoration: map-get($g-link, 'decoration');
+	@include transition(color .1s ease-in-out, 
+											background-color .1s ease-in-out, 
+											border-color .1s ease-in-out,
+											opacity .1s ease-in-out,
+											box-shadow .1s ease-in-out);
+	&:hover,
+	&:focus,
+	&:visited,
+	&:active{
+		// color: map-get($g-link, 'color');
+	}
+	&:hover{
+		color: map-get($g-link, 'color--on-hover');
+		text-decoration: map-get($g-link, 'decoration--on-hover');
+	}
+}

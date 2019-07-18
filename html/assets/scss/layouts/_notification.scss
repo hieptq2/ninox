@@ -1,0 +1,246 @@
+.l-ntf{
+	$s: &;
+	&__header{
+		padding: 0 0 12px;
+		margin: 0 0 24px;
+		border-bottom: 4px solid $grey200;
+	}
+	&__body{
+		//
+	}
+	&__footer{
+
+	}
+	&__title{
+		@extend .h-title-1--sm;
+		@include viewport-max(md){
+			margin-bottom: 8px;
+		}
+	}
+	&__actions{
+		@include viewport-max(md){
+			margin-top: 12px;
+		}
+	}
+	&__setting-link{
+		
+		font-size: 14px;
+		font-weight: 600;
+		color: $grey700;
+		&:hover{
+			color: $color-primary;
+		}
+	}
+	&__title{
+		color: $color-secondary;
+	}
+	&__list{
+		//
+	}
+	&__single-ntf{
+		margin: 0 0 14px;
+		.single-ntf{
+			&-wrap{
+				display: block;
+				padding: 10px 16px;
+				color: $grey800;
+				background-color: $grey50;
+				border-radius: $bdrd;
+				box-shadow: 1px 1px 0 3px $grey100;
+				@include viewport-min(md){
+					padding: 12px 20px;
+					@include display-flex();
+					@include align-items(center);
+				}
+				&:hover{
+					background-color: $grey100;
+				}
+			}
+			&-content{
+				font-size: 16px;
+				@include viewport-min(md){
+					@include flex(1 1 auto);
+					min-width: 0;
+					font-size: 18px;
+				}
+			}
+			&-time{
+				margin: 8px 0 0;
+				font-size: 14px;
+				color: $grey500;
+				@include viewport-min(md){
+					@include flex(0 0 auto);
+					min-width: 0;
+					margin: 0 0 0 24px;
+				}
+			}
+		}
+		&.is-unread{
+			.single-ntf{
+				&-wrap{
+					background-color: $blue50;
+					box-shadow: 1px 1px 0 2px $lblue100;
+					&:hover{
+						background-color: $lblue100;
+					}
+				}
+			}
+		}
+	}
+	&__single-setting{
+		border-bottom: 1px solid $grey200;
+		padding: 16px 0;
+		&:last-child{
+			border-bottom: 0;
+		}
+		.setting{
+			&-wrap{
+				
+				@include viewport-min(md){
+					@include display-flex();
+					@include align-items(center);
+				}
+			}
+			&-content{
+				min-width: 0;
+				padding: 0 0 0;
+				font-size: 16px;
+				@include viewport-min(md){
+					@include flex(1 1 auto);
+					font-size: 18px;
+					padding: 0 0 0 16px;
+				}
+			}
+			&-actions{
+				@include flex(0 0 auto);
+				min-width: 0;
+				margin: 16px 0 0;
+				white-space: nowrap;
+				font-size: 0;
+				@include viewport-min(md){
+					margin: 0 0 0 16px;
+					@include flex(0 0 auto);
+				}
+				&__single{
+					display: inline-block;
+					vertical-align: middle;
+					line-height: 20px;
+					font-size: 16px;
+					text-align: center;
+					width: 96px;
+					@include viewport-max(md){
+						width: auto;
+						display: block;
+						text-align: left;
+						height: 32px;
+						margin-top: 8px;
+						&:before{
+							display: inline-block;
+							vertical-align: top;
+							white-space: nowrap;
+							margin: 8px 0 0;
+							font-size: 14px;
+							width: 50%;
+							line-height: 1.25;
+							font-size: 12px;
+							color: $grey700;
+						}
+						&:nth-child(1){
+							&:before{
+								content: "iSMART Tutoring";
+							}	
+						}
+						&:nth-child(2){
+							&:before{
+								content: "Email";
+							}	
+						}
+						.c-form-toggle{
+							margin: 0;
+							float: right;
+						}
+					}
+				}
+			}
+		}
+	}
+	&__settings{
+		padding: 0 16px;
+		background-color: #fff;
+		border: 3px solid $grey100;
+		border-radius: 16px;
+		.settings{
+			&-thead{
+				border-bottom: 2px solid $grey200;
+				#{$s}__single-setting{
+					padding: 16px 0;
+					.setting{
+						&-content{
+							padding: 0;
+							font-size: 24px;
+							font-weight: 600;
+						}
+						&-actions{
+							@include viewport-max(md){
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&--on-header{
+		padding: 16px;
+		width: 400px;
+		max-width: 80vw;
+		#{$s}__header{
+			padding: 0 0 8px;
+			margin: 0 0 12px;
+			border-bottom: 2px solid $grey200;
+		}
+		#{$s}__title{
+			font-size: 24px;
+			text-shadow: 1px 2px 2px $grey300;
+		}
+		#{$s}__list{
+			margin: 0 -12px;
+			padding: 2px 12px;
+			max-height: 320px;
+			overflow: overlay;
+			overflow: auto;
+			@include scrollbar(6px, $grey300, $grey100);
+		}
+		#{$s}__single-ntf{
+			margin: 0 0 10px;
+			.single-ntf{
+				&-wrap{
+					display: block;
+					padding: 8px 16px;
+				}
+				&-content{
+					font-size: 14px;
+					@include multi-line-ellipsis(20px, 2);
+				}
+				&-time{
+					margin: 4px 0 0;
+				}
+			}
+		}
+		#{$s}__footer{
+			margin: 16px -16px -16px;
+			border-top: 2px solid $grey200;
+		}
+		#{$s}__view-all{
+			padding: 8px;
+			display: block;
+			text-align: center;
+			color: $grey500;
+			background-color: $grey100;
+			border-radius: 0 0 16px 16px;
+			&:hover{
+				color: $grey600;
+			}
+		}
+	}
+}

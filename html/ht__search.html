@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="iSmart HTML Template">
+  <meta name="keywords" content="">
+  <meta name="author" content="Hiep Ta | henry9.com | contact@henry9.com">
+
+	<title>Search Result | iSmart</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/favicon.ico">    
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="assets/css/vendor.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  
+</head>
+
+<body>
+	
+	<div id="SiteContent" class="site-wrapper" data-js-module="page">
+		<header class="l-header l-header--fixtop navbar-expand-lg">
+			<div class="container">
+				<div class="l-header__wrapper">
+					<div class="l-header__logo"><a href="#">iSmart</a></div>
+				</div>
+			</div>
+		</header>
+
+		<div class="l-body l-body--has-sidebar l-body--sidebar-in l-profile">
+			<div class="l-body__wrapper">
+				<div class="l-body__sidebar l-body__sidebar--in l-body__sidebar--offcanvas">
+					<a href="#" class="sidebar-offcanvas-toggler"><i class="fas fa-angle-left"></i></a>
+				</div>
+				<div class="l-body__content sidebar-in-affected">
+					<ol class="c-breadcrumb">
+				    <li class="c-breadcrumb__item"><a href="#"><i class="fas fa-home"></i> Trang chủ</a></li>
+				    <li class="c-breadcrumb__item active"><span>Tìm kiếm</span></li>
+				  </ol>
+					<div class="l-search c-card h-shadow-1">
+						<!-- <div class="l-search__header">
+							<h1 class="l-search__title h-title-2 h-mb-0">Kết quả tìm kiếm</h1>
+						</div> -->
+						<div class="l-search__body">
+							<div class="row">
+								<div class="col-xl-3 left-col mb-3 mb-xl-0">
+									<div class="l-search__sidebar">
+										<div class="sidebar-header d-none d-xl-block">
+											<div class="sidebar-title">Lọc kết quả</div>
+										</div>
+										<div class="sidebar-filter-toggler collapsed d-flex d-xl-none" data-toggle="collapse" data-target="#Collapse__SearchFilter">
+											<span class="sidebar-filter-toggler__label">Lọc kết quả</span>
+											<i class="sidebar-filter-toggler__icon fas"></i>
+										</div>
+										
+										<div class="sidebar-content">
+											<div id="Collapse__SearchFilter" class="search-filter-collapse navbar-collapse collapse">
+												<div class="search-filters">
+													<div class="form-group">
+														<label class="c-form__label">Danh mục</label>
+														<div class="option-wrap">
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" value="" name="Radio__Course--category" checked>
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Toán</span>
+															  <span class="c-form-check__count">(999)</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" name="Radio__Course--category" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Tiếng Việt</span>
+															  <span class="c-form-check__count">(999)</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" name="Radio__Course--category" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Lịch sử</span>
+															  <span class="c-form-check__count">(99)</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" name="Radio__Course--category" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Địa lý</span>
+															  <span class="c-form-check__count">(99)</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" name="Radio__Course--category" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Toán</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" name="Radio__Course--category" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Tiếng Việt</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" name="Radio__Course--category" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Lịch sử</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" name="Radio__Course--category" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Địa lý</span>
+															</label>
+															<!-- <div id="Collapse__SearchOption--CourseSubject" class="collapse">
+																<div class="clearfix">
+																	
+																</div>
+															</div>
+															<div class="text-right">
+																<a href="#Collapse__SearchOption--CourseSubject" data-toggle="collapse" class="option-wrap__view-more collapsed">Xem thêm</a>
+															</div> -->
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="c-form__label">Lớp</label>
+														<div class="option-wrap option-wrap--two-columns">
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" value="" checked>
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Lớp 1</span>
+															  <span class="c-form-check__count">(999)</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Lớp 2</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Lớp 3</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Lớp 4</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Lớp 5</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Lớp 6</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Lớp 7</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Lớp 8</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Lớp 9</span>
+															</label>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="c-form__label">Ngôn ngữ</label>
+														<div class="option-wrap">
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" name="radio__Course--Lang" value="" checked>
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Tiếng Việt</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" name="radio__Course--Lang" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Americano</span>
+															</label>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="c-form__label">Tình trạng</label>
+														<div class="option-wrap">
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" name="radio__Course--Status" value="" checked>
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Còn hạn</span>
+															</label>
+															<label class="c-form-check">
+															  <input class="c-form-check__input" type="checkbox" name="radio__Course--Status" value="">
+															  <span class="c-form-check__icon"></span>
+															  <span class="c-form-check__label">Hết hạn</span>
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>		
+								</div>
+								<div class="col-xl-9">
+									<div class="pl-xl-3">
+										<div class="l-search__result-header">
+											<h2 class="l-search__result-title h-title-1 h-title-1--sm h-mb-8">Kết quả tìm kiếm</h2>
+											<div class="l-search__result-subtitle"><i>Tìm thấy <b>02394023</b> kết quả</i></div>
+										</div>
+										<div class="l-seach__result-body">
+											<div class="l-search__result-list">
+												<div class="c-course-prv">
+													<div class="c-course-prv__wrap">
+														<div class="c-course-prv__avatar">
+															<a href="#" class="h-rectangle h-rectangle--r43">
+																<div class="h-rectangle__inner h-bg-cover avatar-wrap" style="background-image: url('https://cdn.stocksnap.io/img-thumbs/280h/RLKQJG1MDY.jpg');"></div>
+															</a>
+														</div>
+														<div class="c-course-prv__content">
+															<div class="row">
+																<div class="col-sm">
+																	<h3 class="c-course-prv__title"><a href="#">Lorem <span class="search-keyword-hightlight">Phép nhân</span> adipiscing elit.</a></h3>
+																</div>
+																<div class="col-sm-auto">
+																	<div class="c-course-prv__status-badge currently-active">Còn hạn</div>
+																</div>
+															</div>
+															<div class="c-course-prv__excerpt">
+																...orem ipsum dolor sit amet, <span class="search-keyword-hightlight">phép nhân</span> elit. ut turpis.
+															</div>
+															<div class="c-course-prv__meta">
+																<div class="single-meta">Danh mục: <span class="single-meta__cat">Toán</span></div>
+																<div class="single-meta">Lớp: <span class="single-meta__cat">03</span></div>
+																<div class="single-meta">Ngôn ngữ: <span class="single-meta__cat">Tiếng Việt</span></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="c-course-prv">
+													<div class="c-course-prv__wrap">
+														<div class="c-course-prv__avatar">
+															<a href="#" class="h-rectangle h-rectangle--r43">
+																<div class="h-rectangle__inner h-bg-cover avatar-wrap" style="background-image: url('https://cdn.stocksnap.io/img-thumbs/280h/1STVFMTBJY.jpg');"></div>
+															</a>
+														</div>
+														<div class="c-course-prv__content">
+															<div class="row">
+																<div class="col-sm h-mw-0">
+																	<h3 class="c-course-prv__title"><a href="#">Lorem ipsum dolor sit amet, <span class="search-keyword-hightlight">Phép nhân</span> adipiscing elit. Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,</a></h3>
+																</div>
+																<div class="col-sm-auto">
+																	<div class="c-course-prv__status-badge">Hết hạn</div>
+																</div>
+															</div>
+															<div class="c-course-prv__excerpt">
+																...orem ipsum dolor sit amet, <span class="search-keyword-hightlight">phép nhân</span> elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede vDonec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+															</div>
+															<div class="c-course-prv__meta">
+																<div class="single-meta">Danh mục: <span class="single-meta__cat">Toán</span></div>
+																<div class="single-meta">Lớp: <span class="single-meta__cat">03</span></div>
+																<div class="single-meta">Ngôn ngữ: <span class="single-meta__cat">Tiếng Việt</span></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="c-course-prv">
+													<div class="c-course-prv__wrap">
+														<div class="c-course-prv__avatar">
+															<a href="#" class="h-rectangle h-rectangle--r43">
+																<div class="h-rectangle__inner h-bg-cover avatar-wrap" style="background-image: url('https://cdn.stocksnap.io/img-thumbs/280h/KPVOIKEPSG.jpg');"></div>
+															</a>
+														</div>
+														<div class="c-course-prv__content">
+															<div class="row">
+																<div class="col-sm h-mw-0">
+																	<h3 class="c-course-prv__title"><a href="#">Lorem ipsum dolor sit amet, <span class="search-keyword-hightlight">Phép nhân</span> adipiscing elit. Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,</a></h3>
+																</div>
+																<div class="col-sm-auto">
+																	<div class="c-course-prv__status-badge">Hết hạn</div>
+																</div>
+															</div>
+															<div class="c-course-prv__excerpt">
+																...orem ipsum dolor sit amet, <span class="search-keyword-hightlight">phép nhân</span> elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede vDonec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+															</div>
+															<div class="c-course-prv__meta">
+																<div class="single-meta">Danh mục: <span class="single-meta__cat">Toán</span></div>
+																<div class="single-meta">Lớp: <span class="single-meta__cat">03</span></div>
+																<div class="single-meta">Ngôn ngữ: <span class="single-meta__cat">Tiếng Việt</span></div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="h-mt-48 d-flex justify-content-center">
+												<nav aria-label="Page navigation example">
+												  <ul class="pagination">
+												    <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+												    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+												    <li class="page-item"><a class="page-link" href="#">2</a></li>
+												    <li class="page-item"><a class="page-link" href="#">3</a></li>
+												    <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+												  </ul>
+												</nav>		
+											</div>			
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script data-main="assets/js/main" src="assets/js/require.js"></script>
+</body>
+
+</html>

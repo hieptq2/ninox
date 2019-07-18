@@ -1,0 +1,227 @@
+.c-chart{
+	$s: &;
+	&--report-progress{
+		#{$s}__wrap{
+			// max-width: 320px;
+			margin: 0 auto;
+		}
+		#{$s}__label{
+			margin: 12px 0 0;
+			font-size: 18px;
+			text-align: center;
+		}
+	}
+	&__average-score-map{
+		margin: 48px 10% 32px;
+		position: relative;
+		.score-range-wrapper{
+			height: 64px;
+			padding: 3px;
+			border: 3px solid $grey300;
+			border-radius: 32px;
+			@include display-flex();
+		}
+		.score-range{
+			@include flex(0 0 auto);
+			// display: flex;
+			// align-items: center;
+			// justify-content: center;
+			position: relative;
+			border-right: 3px solid #fff;
+			border-radius: 0;
+			&:first-of-type{
+				border-top-left-radius: 28px;
+				border-bottom-left-radius: 28px;
+			}
+			&:last-of-type{
+				border-top-right-radius: 28px;
+				border-bottom-right-radius: 28px;
+				border-right: 0;
+			}
+			&__percentage{
+				margin-top: 10px;
+				line-height: 32px;
+				font-size: 18px;
+				font-weight: 600;
+				color:$grey400;
+				text-align: center;
+			}
+			&__title{
+				position: absolute;
+				padding: 8px 16px;
+				bottom: 100%; 
+				left: 50%;
+				margin-bottom: 16px; 
+				margin-top: auto;
+				text-align: center;
+				color: #fff;
+				background-color: material-color('blue', '400');
+				border-radius: 12px;
+				box-shadow: 2px -2px 0 2px material-color('blue', '600');
+				display: none;
+				@include translateX(9999px);
+				white-space: nowrap;
+				@include transition(opacity .2s ease-in-out);
+				display: none;
+				opacity: 0;
+				z-index: 200;
+				.title-percent{
+					width: 80px;
+					text-align: center;
+					margin: 0 auto 4px;
+					font-size: 18px;
+					font-weight: 700;
+					border-bottom: 1px solid  material-color('blue', '300');
+				}
+				.title-medal{
+					display: inline-block;
+					vertical-align: baseline;
+					margin: 0 4px 0 0;
+				}
+				.title-text{
+					display: inline-block;
+					vertical-align: baseline;
+					font-size: 14px;
+					font-weight: 500;
+					white-space: nowrap;
+				}
+				&:before{
+					content: "";
+					display: block;
+					position: absolute;
+					top: 100%; left: 50%;
+					margin-left: -12px;
+					@include triangle('bottom', 28px, 14px, material-color('blue', '600'));
+				}
+				&:after{
+					content: "";
+					display: block;
+					position: absolute;
+					top: 100%; left: 50%;
+					margin-left: -12px;
+					@include triangle('bottom', 24px, 12px, material-color('blue', '400'));
+				}
+				&.is-show{
+					display: block;
+					@include translateX(-50%);
+					opacity: 1;
+				}
+			}
+			&:hover{
+				.score-range__title{
+					display: block;
+					@include translateX(-50%);
+					opacity: 1;
+				}
+			}
+		}
+		.top-user-divider{
+			position: absolute;
+			top: 64px;
+			white-space: nowrap;
+			@include translate(-50%);
+			padding: 6px 12px;
+			border-radius: 16px;
+			background-color: $grey50;
+			box-shadow: 0 1px 0 3px $grey200;
+			
+			&:before{
+				content: "";
+				display: block;
+				position: absolute;
+				top: -10px;
+				left: 50%; margin-left: -8px;
+				@include triangle('top', 16px, 8px, $grey200);
+			}
+			&:after{
+				content: "";
+				display: block;
+				position: absolute;
+				top: -7px;
+				left: 50%; margin-left: -8px;
+				@include triangle('top', 16px, 8px, $grey50);
+			}
+
+			.divider{
+				&-stick{
+					content: "";
+					display: block;
+					width: 2px;
+					height: 72px;
+					background-color: $grey500;
+					position: absolute;
+					top: -84px; left: 50%; margin-left: -1px;
+					border-radius: 2px;
+				}
+				&-percent{
+					width: 48px;
+					line-height: 32px;
+					position: absolute;
+					top: -68px; left: 50%; 
+					margin-left: -24px;
+					margin-top: -40px;
+					font-size: 14px;
+					font-weight: 700;
+					text-align: center;
+					color: material-color('orange', '600');
+				}
+				&-icon{
+					display: block;
+					position: absolute;
+				}
+				&-medal{
+					display: inline-block;
+					vertical-align: baseline;
+					margin: 0 10px 0 0;
+					img{
+						display: inline-block;
+						height: 22px;
+					}
+				}
+				&-label{
+					display: inline-block;
+					vertical-align: baseline;
+					line-height: 24px;
+					font-size: 16px;
+					font-weight: 600;
+					padding-right: 12px;
+				}
+			}
+		}
+	}
+	&__average-score-subtitle{
+		margin-top: 96px;
+		text-align: center;
+		font-size: 14px;
+		color: $grey700;
+	}
+	&__subtitle{
+		margin-top: 24px;
+		text-align: center;
+		font-size: 14px;
+		color: $grey700;
+	}
+}
+
+.highcharts-plot-band-label {
+	display: block;
+	position: relative;
+	z-index: 900;
+}
+.highcharts__tooltips {
+	display: none;
+  padding: 8px 12px;
+  position: absolute;
+  z-index: 900;
+  top: 0px;
+  @include translateX(-50%);
+  background-color: #fff;
+  border-radius: 8px;
+      backface-visibility: hidden;
+  &.is-show{
+  	display: block;
+  }
+  &:hover{
+  	display: block !important;
+  }
+}
