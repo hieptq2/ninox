@@ -21,7 +21,25 @@ define([], function(){
 
 
         // date picker
-        $('input.js-datepicker').daterangepicker();
+        $('input.js-datepicker').daterangepicker({
+          locale: {
+            format: 'DD/MM/YYYY'
+          },
+        });
+        $('input.js-datepicker--single').daterangepicker({
+          singleDatePicker: true,
+          locale: {
+            format: 'DD/MM/YYYY'
+          },
+        });
+
+        $('.content-bottom-date input.js-datepicker--single').daterangepicker({
+          singleDatePicker: true,
+          locale: {
+            format: 'DD/MM/YYYY'
+          },
+          drops: "up"
+        });
 
         $('.js-datepicker-report-courses').daterangepicker({
           autoUpdateInput: false,
@@ -77,6 +95,16 @@ define([], function(){
         $('.modal').on('hidden.bs.modal', function(){
           $('.l-header--fixtop').css('right', '0');
           $('.c-card--profile .c-card__footer--fix-bottom').css('left', '50%')
+        });
+
+
+        /**
+         * study-group-select-section: select all checkbox
+         */
+        $('.study-group-select-section .js-select-all-checkbox').click(function(e){
+          e.preventDefault();
+          console.log('1');
+          $(this).closest('.study-group-select-section').find('.single-option__input').prop('checked', true);
         });
 
 
